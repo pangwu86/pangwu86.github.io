@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="阅读," />
+  <meta name="keywords" content="css,前端," />
 
 
 
@@ -84,39 +84,23 @@
 
 
 
-<meta name="description" content="豆瓣链接
-首先这是一本2010年出版的前端技术书, 现在才看说实话有点晚了. 毕竟前端圈的技术更新快, 里面的部分知识点已经out了.
-整本书总体分为两部分
-
-作者的经验
-前端知识点
-
-作者首先对前端开发做了个总结, 那就是”精一行, 通十行”. 主要原因就是前端技术界限不明显，各个领域相互渗透.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于<<编写高质量的代码>>">
-<meta property="og:url" content="http://blog.pangwu86.pw/2015/01/27/001-编写高质量的代码/index.html">
+<meta property="og:title" content="web网页中主题切换的实现思路">
+<meta property="og:url" content="http://blog.pangwu86.pw/2017/01/17/web网页中主题切换的实现思路/index.html">
 <meta property="og:site_name" content="胖五talk">
-<meta property="og:description" content="豆瓣链接
-首先这是一本2010年出版的前端技术书, 现在才看说实话有点晚了. 毕竟前端圈的技术更新快, 里面的部分知识点已经out了.
-整本书总体分为两部分
-
-作者的经验
-前端知识点
-
-作者首先对前端开发做了个总结, 那就是”精一行, 通十行”. 主要原因就是前端技术界限不明显，各个领域相互渗透.">
-<meta property="og:image" content="http://blog.pangwu86.pw/images/reading/编写高质量的代码.jpg">
-<meta property="og:updated_time" content="2015-03-11T03:27:43.000Z">
+<meta property="og:image" content="http://blog.pangwu86.pw/images/14847191544364.jpg">
+<meta property="og:image" content="http://blog.pangwu86.pw/images/14847234833572.jpg">
+<meta property="og:image" content="http://blog.pangwu86.pw/images/14847237389761.jpg">
+<meta property="og:image" content="http://blog.pangwu86.pw/images/14847243057620.jpg">
+<meta property="og:image" content="http://blog.pangwu86.pw/images/bs4%E5%A4%9A%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF-2.png">
+<meta property="og:image" content="http://blog.pangwu86.pw/images/14847316752550.jpg">
+<meta property="og:image" content="http://blog.pangwu86.pw/images/14847318995920.jpg">
+<meta property="og:image" content="http://blog.pangwu86.pw/images/nutzam%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0.png">
+<meta property="og:image" content="http://blog.pangwu86.pw/images/14847306050349.jpg">
+<meta property="og:updated_time" content="2017-01-18T10:03:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于<<编写高质量的代码>>">
-<meta name="twitter:description" content="豆瓣链接
-首先这是一本2010年出版的前端技术书, 现在才看说实话有点晚了. 毕竟前端圈的技术更新快, 里面的部分知识点已经out了.
-整本书总体分为两部分
-
-作者的经验
-前端知识点
-
-作者首先对前端开发做了个总结, 那就是”精一行, 通十行”. 主要原因就是前端技术界限不明显，各个领域相互渗透.">
-<meta name="twitter:image" content="http://blog.pangwu86.pw/images/reading/编写高质量的代码.jpg">
+<meta name="twitter:title" content="web网页中主题切换的实现思路">
+<meta name="twitter:image" content="http://blog.pangwu86.pw/images/14847191544364.jpg">
 
 
 
@@ -144,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.pangwu86.pw/2015/01/27/001-编写高质量的代码/"/>
+  <link rel="canonical" href="http://blog.pangwu86.pw/2017/01/17/web网页中主题切换的实现思路/"/>
 
 
 
 
 
-  <title> 关于<<编写高质量的代码>> | 胖五talk </title>
+  <title> web网页中主题切换的实现思路 | 胖五talk </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +257,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.pangwu86.pw/2015/01/27/001-编写高质量的代码/">
+  <link itemprop="mainEntityOfPage" href="http://blog.pangwu86.pw/2017/01/17/web网页中主题切换的实现思路/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="胖五">
@@ -297,7 +281,7 @@
             
             
               
-                关于<<编写高质量的代码>>
+                web网页中主题切换的实现思路
               
             
           </h1>
@@ -312,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-01-27T15:35:56+08:00">
-                2015-01-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-17T19:14:02+08:00">
+                2017-01-17
               </time>
             
 
@@ -331,8 +315,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2015/01/27/001-编写高质量的代码/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/01/27/001-编写高质量的代码/" itemprop="commentCount"></span>
+                <a href="/2017/01/17/web网页中主题切换的实现思路/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/17/web网页中主题切换的实现思路/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -342,7 +326,7 @@
 
           
           
-             <span id="/2015/01/27/001-编写高质量的代码/" class="leancloud_visitors" data-flag-title="关于<<编写高质量的代码>>">
+             <span id="/2017/01/17/web网页中主题切换的实现思路/" class="leancloud_visitors" data-flag-title="web网页中主题切换的实现思路">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -369,87 +353,57 @@
       
 
       
-        <p><img src="/images/reading/编写高质量的代码.jpg" alt="编写高质量的代码"> </p>
-<p><a href="http://book.douban.com/subject/4881987/" target="_blank" rel="external">豆瓣链接</a></p>
-<p>首先这是一本2010年出版的前端技术书, 现在才看说实话有点晚了. 毕竟前端圈的技术更新快, 里面的部分知识点已经out了.</p>
-<p>整本书总体分为两部分</p>
-<ol>
-<li>作者的经验</li>
-<li>前端知识点</li>
-</ol>
-<p>作者首先对前端开发做了个总结, 那就是”精一行, 通十行”. 主要原因就是前端技术界限不明显，各个领域相互渗透.</p>
+        <p><img src="/images/14847191544364.jpg" alt=""></p>
 <a id="more"></a>
-<p>想做出一个画面精美, 布局合理, 交互体验流畅的页面, 需要对js, html, css的运用恰到好处才行, 所谓恰到好处就是指实现一个功能你知道应该怎么组合这几种语言来做到最优实现. 当然想要更完美, 你可能还需要懂一点配色原理, 甚至能自己PS一下图片, 对于后台技术与后台做接口对接要有一定的认识.</p>
-<p>毕竟对于前端界面来说, 要实现的不仅仅是”能用”而是”好用”.</p>
-<p>作者把一下编程常见思路也代入了前端开发, 这些东西在2010年前后应该说是各种语言都在说的事情</p>
-<ul>
-<li>必要的注释</li>
-<li>提供代码重用性</li>
-<li>注意兼容性</li>
-</ul>
-<p>当然由于前端本身缺少一套事实上的工作流程标准(对比java, 2010年的时候ssh就是标配呀), 所以前端在架构设计, 流程规范中始终处于自己搞一套或者借鉴某大厂的一套. 当然前端各种代码混合工作的特性, 也算有利有弊, 没有标准, 才能百花齐放么.</p>
-<p>本书共5章, 前2章是作者经验, 后3章分别对html, css, js做了深入的讨论, 当然很多知识点你google也能找出一堆教程.</p>
-<p>总的来说, 对于前端初中级开发人员, 看一遍总是会有收获的.</p>
-<h2 id="摘抄笔记"><a href="#摘抄笔记" class="headerlink" title="摘抄笔记"></a>摘抄笔记</h2><p>========================================== 关于前端开发</p>
-<p>前端界限不明显，各个领域相互渗透, 像配色，布局，交互等等</p>
-<p>精一行，得通十行</p>
+<blockquote>
+<p>网页中切换主题，实际上就是在对网页中的元素设置不同的样式所呈现出来的整体显示效果的切换</p>
+</blockquote>
+<p>比如上图中<a href="https://nutzam.com" target="_blank" rel="external">nutz官网</a>可以发现，亮色与暗色主题对比，网页结构布局是完全一致的，背景色一黑一白，文字颜色也改成了对应背景色可读性良好的颜色。</p>
+<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p>先说结论，总结成一句话就是 “加载对应的css，后加载的css覆盖默认显示样式，即可达到换主题的目的”，具体的实现分为2步：</p>
 <ol>
-<li>css布局是前端开发的基本功</li>
-<li>会用原生js, 熟悉常用框架，最佳实践</li>
-<li>了解后台语言</li>
-<li>兼容主流浏览器</li>
+<li>准备两份不同主题的css</li>
+<li>使用js实现切换(加载)css的方法</li>
 </ol>
-<p>========================================== 关于html与CSS</p>
-<p>了解标签的语义，为什么有这些标签，什么时候用，优点是什么</p>
-<p>css布局，通过css控制页面中元素样式，位置，大小，颜色等</p>
-<p>去掉样式，看网页结构是否组织良好有序，是否仍有很好的可读性</p>
-<p>什么是怪异模式? </p>
-<p>如何组织css, base, common, page</p>
-<p>关于base.css(reset.css)</p>
-<p>相邻的margin-left, margin-right不会重合, 但是相邻的margin-top, margin-bottom会重合</p>
-<p>最好不要混用margin-top跟margin-bottom,</p>
-<p>css的权重, html标签1, class是10, id是100</p>
-<ol>
-<li>权重高的来设置样式</li>
-<li>权重一样, 按照后定义的</li>
+<h2 id="生成不同主题的css"><a href="#生成不同主题的css" class="headerlink" title="生成不同主题的css"></a>生成不同主题的css</h2><p>不同主题的css差异主要体现在<strong>颜色</strong>这个概念上，理论上只要有使用颜色的地方都需要进行适当的调整，比如文字颜色，背景色，边框颜色等等。简单来说就是白底陪黑字，黑底用白字，如果是采用了灰度色，则根据现实情况进行适度调整或无需调整。最简单的调整颜色的方法是使用适当的工具来生成css，比如less，scss等</p>
+<h3 id="用bs4来实现"><a href="#用bs4来实现" class="headerlink" title="用bs4来实现"></a>用bs4来实现</h3><p><a href="https://nutzam.com" target="_blank" rel="external">nutz官网</a>采用了<a href="https://v4-alpha.getbootstrap.com/" target="_blank" rel="external">bootstrap4</a>(下文简称为bs4)作为前端样式库，bs4本身就采用了scss进行编写，在源码的基础上进行主题的设置可以说是非常的简单。先看下bs4本身是怎么做的</p>
+<p><img src="/images/14847234833572.jpg" alt=""></p>
+<p>bs4根据功能将css内容拆散放置在不同的scss文件中，最终通过bootstrap.scss将所有模块引入后编译成最终的css<br>其中最关键的variables.scss定义了样式所有变量，包括颜色，各种宽度大小等等</p>
+<p><img src="/images/14847237389761.jpg" alt=""></p>
+<p>所以需要实现一个不同颜色的主题，只需要修改variables.scss中属性即可，然后不同主题的variables.scss即可编译多份不同的bootstrap.scss。<br>bs4本身也提供了custom.scss供你修改默认的属性，所以将变更内容放这里更好，避免在未来更新bs4本身时引发一些不必要的麻烦。</p>
+<p><img src="/images/14847243057620.jpg" alt=""></p>
+<p>也就是将需要修改的颜色的部分放到custom.scss中，替换到现有的bootstrap.scss中再编译。</p>
+<p><img src="/images/bs4%E5%A4%9A%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF-2.png" alt="bs4多主题实现思路"></p>
+<h3 id="nutzam的主题"><a href="#nutzam的主题" class="headerlink" title="nutzam的主题"></a>nutzam的主题</h3><ol>
+<li>将bootstrap.scss复制2份，分别命名为nutzbs_dark.scss与nutzbs_light.scss</li>
+<li>新建nutzbs-custom_dark.scss,nutzbs-custom_light.scss分别替换掉主题文件中的custom.scss</li>
+<li>新建一个nutzam.scss加入到主题文件的最后</li>
+<li>根据需要修改bs自带的控件并进行替换</li>
 </ol>
-<p>CSS sprite<br>优点 减少http请求<br>缺点 合并的图片仅仅适用于背景图片 img src不能用<br>         维护麻烦, 不宜修改</p>
-<p>CSS hack<br>大部分针对IE<br>&lt;!–[if IE 6]&gt;</p>
-<p>&lt;![endif]–&gt;</p>
-<p>选择符前缀法<br><em>html .test   // only IE6
-</em>+html .test // only IE7</p>
-<p>样式属性前缀发<br>_ IE6生效 *IE6,7生效</p>
-<p>超链接访问后hover不出现<br>a:visited a:hover顺序要注意, 不要放错</p>
-<p>a标签四种状态, 排序最好是 love hate原则, l(link)ov(visited)e h(hover)a(active)te</p>
-<p>块级元素, 不论width都占一行</p>
-<p>行内元素, 一行满了才换行, 宽度随内容儿变化</p>
-<p>行内元素的margin跟padding要注意, 水平方向正常, 但是垂直方向的不会产生边距效果</p>
-<p>display的 block, inline, inline-block(IE6,7不支持)</p>
-<p>其中inline-block, 块级元素, margin跟padding正常, 宽度不占满父元素, 可以和其他行内元素在同一行里</p>
-<p>hasLayout属性</p>
-<p>改变文档流</p>
-<p>position:relative  position:absolute 可以激活元素的left, top, bottom, right 和z-index属性</p>
-<p>z-index: 0 默认</p>
-<p>float 只能设置left, right, 但依旧在z-index:0</p>
-<p>设置了float跟absolute的元素, 都以 inline-block 形式显示</p>
-<p>水平居中</p>
-<p>行内元素, 在父元素使用 text-align:center,  文字图片都会水平居中</p>
-<p>块级元素<br>1.确定width, margin-right:auto, margin-left:auto<br>2.不定width<br>     2.1 使用table,  table宽度由内部元素撑起, 然后设定margin即可<br>     2.2 设置line, 父元素text-align:center,  但是这样就无法设置宽度了<br>     2.3 父元素float relative left:50%  子元素float relative left-50%</p>
-<p>垂直居中</p>
-<ol>
-<li>不定height, 设置上下padding</li>
-<li>确定height, 设置line-height跟height一样大</li>
-<li>多行文本<br>  3.1 vertical-align 只有父元素为td或th时起作用,  设置父元素的display:table-cell(not IE6, 7), 激活vertical-align 或者直接上table</li>
-</ol>
-<p>========================================== 关于js</p>
-<p>避免全局变量泛滥, 合理使用命名空间, 为代码添加必要的注释</p>
-<p>DOMReady比window.onload更适合用来调用初始化函数, 因为onload要在所有元素加载完后才触发(比如图片, flash等很大的文件)</p>
-<p>冒泡事件处理<br>IE: e.cancelBubble = true;<br>FF: e.stopPropagation()</p>
-<p>事件监听 on XXX 后面的会覆盖前面的,  使用 attachEvent 跟 addEventListener 可以叠加事件</p>
-<p>节点属性 通过 node.XXX,  如果使用 node.getAttribute(‘XXX’) IE与FF结果可能不一致</p>
-<p>但是自定义属性只能通过 node.getAttribute(‘XXX’) 获得</p>
-<p>Event对象</p>
-<p>IE中作为window的一个属性, 全局作用域下<br>FF中作为事件的参数存在</p>
+<p>这样最终nutzbs_dark.scss与nutzbs_light.scss分别编译出来就是两份主题css文件</p>
+<p><img src="/images/14847316752550.jpg" alt=""></p>
+<p><img src="/images/14847318995920.jpg" alt=""></p>
+<p><img src="/images/nutzam%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0.png" alt="nutzam主题实现"></p>
+<p>准备工作好了，下面说下几个文件文件具体的修改。</p>
+<h4 id="nutzam-scss"><a href="#nutzam-scss" class="headerlink" title="nutzam.scss"></a>nutzam.scss</h4><p>该文件主要是nutzam首页中自定义样式的存放位置，放在主题文件的最后是因为方便使用bs提供的各种属性与方法<br>nutzam所使用的颜色除了bs提供的，自定义的颜色也要使用变量的方式进行引用然后分别在nutzbs-custom_dark.scss与nutzbs-custom_light.scss设置</p>
+<h4 id="custom-dark与custom-light"><a href="#custom-dark与custom-light" class="headerlink" title="custom_dark与custom_light"></a>custom_dark与custom_light</h4><p>顾名思义这里就是修改对应颜色的地方，也就是覆盖variables.scss中定义的颜色来达到对应主题需要的效果。</p>
+<p>因为默认的bs4就是一种白底为主的样式，所以light主题基本不用修改，仅仅将nutzam自定义的颜色放在这里。dark主题将需要修改的颜色从variables.scss中copy过来，然后修改成需要的颜色即可。</p>
+<p><img src="/images/14847306050349.jpg" alt=""></p>
+<blockquote>
+<p>这里有一点需要注意，就是variables.scss中copy过来的颜色都带有 <strong>!default</strong> 字样，修改时一定要去掉。<br><strong>!default</strong> 标记表示该属性在没有其他值的时候的默认值，如果这里还带着将不会起到替换variables.scss样式的效果</p>
+</blockquote>
+<h2 id="切换主题的方法"><a href="#切换主题的方法" class="headerlink" title="切换主题的方法"></a>切换主题的方法</h2><p>可以先将默认主题写到页面中，然后通过js触发事件加载其他主题的css。后加载的css会覆盖之前样式从而达到切换主题的效果。</p>
+<p>下面给出我的一种实现思路，先将亮色主题加入到页面中</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"/css/nutzbs_light.css"</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>然后实现两个方法，添加/删除暗色主题</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 添加暗色主题</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addDarkTheme</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   <span class="keyword">var</span> link = <span class="built_in">document</span>.createElement(<span class="string">'link'</span>);</div><div class="line">   link.type = <span class="string">'text/css'</span>;</div><div class="line">   link.id = <span class="string">"theme-css-dark"</span>;  <span class="comment">// 加上id方便后面好查找到进行删除</span></div><div class="line">   link.rel = <span class="string">'stylesheet'</span>;</div><div class="line">   link.href = <span class="string">'/css/nutzbs_dark.css'</span>;</div><div class="line">   <span class="built_in">document</span>.getElementsByTagName(<span class="string">"head"</span>)[<span class="number">0</span>].appendChild(link);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 删除暗色主题</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeDarkTheme</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   $(<span class="string">'#theme-css-dark'</span>).remove();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>接着实现一个方法来进行切换即可</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 使用暗色主题</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">useDarkTheme</span>(<span class="params">useDark</span>) </span>&#123;</div><div class="line">   <span class="keyword">if</span> (useDark) &#123;</div><div class="line">       addDarkTheme();</div><div class="line">   &#125; <span class="keyword">else</span> &#123;</div><div class="line">       removeDarkTheme();</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="保持选中的主题"><a href="#保持选中的主题" class="headerlink" title="保持选中的主题"></a>保持选中的主题</h2><p>如果你按照上面的实现了就会发现一个问题，当前页面切换好了主题以后，切换到其他页面又变成了默认主题，这里就需要解决这个保持当前选中主题的问题</p>
+<p>因为是静态网页，所以通过cookie来记录选中的样式是最好的方案。这里推荐一个jq库<a href="https://github.com/js-cookie/js-cookie" target="_blank" rel="external">js-cookie</a>，可以方法的管理cookie。</p>
+<p>加入该库后修改上面的方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 获取cookie中选中的主题名称，没有就给个默认的</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getThemeCSSName</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   <span class="keyword">return</span> Cookies.get(<span class="string">'nutzam-theme'</span>) || <span class="string">"light"</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 使用暗色主题(记录选择到cookie中)</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">useDarkTheme</span>(<span class="params">useDark</span>) </span>&#123;</div><div class="line">   Cookies.set(<span class="string">'nutzam-theme'</span>, useDark ? <span class="string">"dark"</span> : <span class="string">"light"</span>);</div><div class="line">   <span class="keyword">if</span> (useDark) &#123;</div><div class="line">       addDarkTheme();</div><div class="line">   &#125; <span class="keyword">else</span> &#123;</div><div class="line">       removeDarkTheme();</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后在页面加载完成后，调用一下该方法即可, 切换其他页面也就自动的切换到选中的主题了</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    useDarkTheme(getThemeCSSName() == <span class="string">'dark'</span>);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -473,7 +427,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/阅读/" rel="tag"># 阅读</a>
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
           
         </div>
       
@@ -482,8 +438,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/01/25/byebyesns/" rel="next" title="再见我的碎片化生活">
-                <i class="fa fa-chevron-left"></i> 再见我的碎片化生活
+              <a href="/2017/01/08/nutzam更新/" rel="next" title="nutzam更新">
+                <i class="fa fa-chevron-left"></i> nutzam更新
               </a>
             
           </div>
@@ -491,10 +447,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/02/07/oppo-find5-cm12/" rel="prev" title="Find5刷CM12">
-                Find5刷CM12 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -543,8 +495,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/01/27/001-编写高质量的代码/"
-           data-title="关于<<编写高质量的代码>>" data-url="http://blog.pangwu86.pw/2015/01/27/001-编写高质量的代码/">
+      <div class="ds-thread" data-thread-key="2017/01/17/web网页中主题切换的实现思路/"
+           data-title="web网页中主题切换的实现思路" data-url="http://blog.pangwu86.pw/2017/01/17/web网页中主题切换的实现思路/">
       </div>
     
   </div>
@@ -657,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘抄笔记"><span class="nav-number">1.</span> <span class="nav-text">摘抄笔记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实现思路"><span class="nav-number">1.</span> <span class="nav-text">实现思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成不同主题的css"><span class="nav-number">2.</span> <span class="nav-text">生成不同主题的css</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用bs4来实现"><span class="nav-number">2.1.</span> <span class="nav-text">用bs4来实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nutzam的主题"><span class="nav-number">2.2.</span> <span class="nav-text">nutzam的主题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#nutzam-scss"><span class="nav-number">2.2.1.</span> <span class="nav-text">nutzam.scss</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#custom-dark与custom-light"><span class="nav-number">2.2.2.</span> <span class="nav-text">custom_dark与custom_light</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切换主题的方法"><span class="nav-number">3.</span> <span class="nav-text">切换主题的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保持选中的主题"><span class="nav-number">4.</span> <span class="nav-text">保持选中的主题</span></a></li></ol></div>
             
 
           </div>
