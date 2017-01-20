@@ -88,19 +88,19 @@
 <meta property="og:title" content="web网页中主题切换的实现思路">
 <meta property="og:url" content="http://blog.pangwu86.pw/2017/01/17/web网页中主题切换的实现思路/index.html">
 <meta property="og:site_name" content="胖五talk">
-<meta property="og:image" content="http://blog.pangwu86.pw/images/14847191544364.jpg">
-<meta property="og:image" content="http://blog.pangwu86.pw/images/14847234833572.jpg">
-<meta property="og:image" content="http://blog.pangwu86.pw/images/14847237389761.jpg">
-<meta property="og:image" content="http://blog.pangwu86.pw/images/14847243057620.jpg">
-<meta property="og:image" content="http://blog.pangwu86.pw/images/bs4%E5%A4%9A%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF-2.png">
-<meta property="og:image" content="http://blog.pangwu86.pw/images/14847316752550.jpg">
-<meta property="og:image" content="http://blog.pangwu86.pw/images/14847318995920.jpg">
-<meta property="og:image" content="http://blog.pangwu86.pw/images/nutzam%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0.png">
-<meta property="og:image" content="http://blog.pangwu86.pw/images/14847306050349.jpg">
-<meta property="og:updated_time" content="2017-01-18T10:03:33.000Z">
+<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183329.jpg">
+<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183546.jpg">
+<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183703.jpg">
+<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183716.jpg">
+<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183730.jpg">
+<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183749.jpg">
+<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183755.jpg">
+<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183806.jpg">
+<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183821.jpg">
+<meta property="og:updated_time" content="2017-01-20T18:42:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web网页中主题切换的实现思路">
-<meta name="twitter:image" content="http://blog.pangwu86.pw/images/14847191544364.jpg">
+<meta name="twitter:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183329.jpg">
 
 
 
@@ -353,7 +353,7 @@
       
 
       
-        <p><img src="/images/14847191544364.jpg" alt=""></p>
+        <p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183329.jpg" alt=""></p>
 <a id="more"></a>
 <blockquote>
 <p>网页中切换主题，实际上就是在对网页中的元素设置不同的样式所呈现出来的整体显示效果的切换</p>
@@ -366,13 +366,13 @@
 </ol>
 <h2 id="生成不同主题的css"><a href="#生成不同主题的css" class="headerlink" title="生成不同主题的css"></a>生成不同主题的css</h2><p>不同主题的css差异主要体现在<strong>颜色</strong>这个概念上，理论上只要有使用颜色的地方都需要进行适当的调整，比如文字颜色，背景色，边框颜色等等。简单来说就是白底陪黑字，黑底用白字，如果是采用了灰度色，则根据现实情况进行适度调整或无需调整。最简单的调整颜色的方法是使用适当的工具来生成css，比如less，scss等</p>
 <h3 id="用bs4来实现"><a href="#用bs4来实现" class="headerlink" title="用bs4来实现"></a>用bs4来实现</h3><p><a href="https://nutzam.com" target="_blank" rel="external">nutz官网</a>采用了<a href="https://v4-alpha.getbootstrap.com/" target="_blank" rel="external">bootstrap4</a>(下文简称为bs4)作为前端样式库，bs4本身就采用了scss进行编写，在源码的基础上进行主题的设置可以说是非常的简单。先看下bs4本身是怎么做的</p>
-<p><img src="/images/14847234833572.jpg" alt=""></p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183546.jpg" alt=""></p>
 <p>bs4根据功能将css内容拆散放置在不同的scss文件中，最终通过bootstrap.scss将所有模块引入后编译成最终的css<br>其中最关键的variables.scss定义了样式所有变量，包括颜色，各种宽度大小等等</p>
-<p><img src="/images/14847237389761.jpg" alt=""></p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183703.jpg" alt=""></p>
 <p>所以需要实现一个不同颜色的主题，只需要修改variables.scss中属性即可，然后不同主题的variables.scss即可编译多份不同的bootstrap.scss。<br>bs4本身也提供了custom.scss供你修改默认的属性，所以将变更内容放这里更好，避免在未来更新bs4本身时引发一些不必要的麻烦。</p>
-<p><img src="/images/14847243057620.jpg" alt=""></p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183716.jpg" alt=""></p>
 <p>也就是将需要修改的颜色的部分放到custom.scss中，替换到现有的bootstrap.scss中再编译。</p>
-<p><img src="/images/bs4%E5%A4%9A%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF-2.png" alt="bs4多主题实现思路"></p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183730.jpg" alt=""></p>
 <h3 id="nutzam的主题"><a href="#nutzam的主题" class="headerlink" title="nutzam的主题"></a>nutzam的主题</h3><ol>
 <li>将bootstrap.scss复制2份，分别命名为nutzbs_dark.scss与nutzbs_light.scss</li>
 <li>新建nutzbs-custom_dark.scss,nutzbs-custom_light.scss分别替换掉主题文件中的custom.scss</li>
@@ -380,14 +380,14 @@
 <li>根据需要修改bs自带的控件并进行替换</li>
 </ol>
 <p>这样最终nutzbs_dark.scss与nutzbs_light.scss分别编译出来就是两份主题css文件</p>
-<p><img src="/images/14847316752550.jpg" alt=""></p>
-<p><img src="/images/14847318995920.jpg" alt=""></p>
-<p><img src="/images/nutzam%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0.png" alt="nutzam主题实现"></p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183749.jpg" alt=""></p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183755.jpg" alt=""></p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183806.jpg" alt=""></p>
 <p>准备工作好了，下面说下几个文件文件具体的修改。</p>
 <h4 id="nutzam-scss"><a href="#nutzam-scss" class="headerlink" title="nutzam.scss"></a>nutzam.scss</h4><p>该文件主要是nutzam首页中自定义样式的存放位置，放在主题文件的最后是因为方便使用bs提供的各种属性与方法<br>nutzam所使用的颜色除了bs提供的，自定义的颜色也要使用变量的方式进行引用然后分别在nutzbs-custom_dark.scss与nutzbs-custom_light.scss设置</p>
 <h4 id="custom-dark与custom-light"><a href="#custom-dark与custom-light" class="headerlink" title="custom_dark与custom_light"></a>custom_dark与custom_light</h4><p>顾名思义这里就是修改对应颜色的地方，也就是覆盖variables.scss中定义的颜色来达到对应主题需要的效果。</p>
 <p>因为默认的bs4就是一种白底为主的样式，所以light主题基本不用修改，仅仅将nutzam自定义的颜色放在这里。dark主题将需要修改的颜色从variables.scss中copy过来，然后修改成需要的颜色即可。</p>
-<p><img src="/images/14847306050349.jpg" alt=""></p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183821.jpg" alt=""></p>
 <blockquote>
 <p>这里有一点需要注意，就是variables.scss中copy过来的颜色都带有 <strong>!default</strong> 字样，修改时一定要去掉。<br><strong>!default</strong> 标记表示该属性在没有其他值的时候的默认值，如果这里还带着将不会起到替换variables.scss样式的效果</p>
 </blockquote>
@@ -399,7 +399,7 @@
 <p>接着实现一个方法来进行切换即可</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 使用暗色主题</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">useDarkTheme</span>(<span class="params">useDark</span>) </span>&#123;</div><div class="line">   <span class="keyword">if</span> (useDark) &#123;</div><div class="line">       addDarkTheme();</div><div class="line">   &#125; <span class="keyword">else</span> &#123;</div><div class="line">       removeDarkTheme();</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="保持选中的主题"><a href="#保持选中的主题" class="headerlink" title="保持选中的主题"></a>保持选中的主题</h2><p>如果你按照上面的实现了就会发现一个问题，当前页面切换好了主题以后，切换到其他页面又变成了默认主题，这里就需要解决这个保持当前选中主题的问题</p>
-<p>因为是静态网页，所以通过cookie来记录选中的样式是最好的方案。这里推荐一个jq库<a href="https://github.com/js-cookie/js-cookie" target="_blank" rel="external">js-cookie</a>，可以方法的管理cookie。</p>
+<p>因为是静态网页，所以通过cookie来记录选中的样式是最好的方案。这里推荐一个jq库<a href="https://github.com/js-cookie/js-cookie" target="_blank" rel="external">js-cookie</a>，可以很方便管理cookie。</p>
 <p>加入该库后修改上面的方法</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 获取cookie中选中的主题名称，没有就给个默认的</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getThemeCSSName</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   <span class="keyword">return</span> Cookies.get(<span class="string">'nutzam-theme'</span>) || <span class="string">"light"</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 使用暗色主题(记录选择到cookie中)</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">useDarkTheme</span>(<span class="params">useDark</span>) </span>&#123;</div><div class="line">   Cookies.set(<span class="string">'nutzam-theme'</span>, useDark ? <span class="string">"dark"</span> : <span class="string">"light"</span>);</div><div class="line">   <span class="keyword">if</span> (useDark) &#123;</div><div class="line">       addDarkTheme();</div><div class="line">   &#125; <span class="keyword">else</span> &#123;</div><div class="line">       removeDarkTheme();</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>然后在页面加载完成后，调用一下该方法即可, 切换其他页面也就自动的切换到选中的主题了</p>
