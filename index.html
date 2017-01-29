@@ -251,6 +251,179 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://blog.pangwu86.pw/2017/01/29/快速跑起nutzbook项目/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="胖五">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="胖五talk">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="胖五talk" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/29/快速跑起nutzbook项目/" itemprop="url">
+                  快速跑起nutzbook-project项目
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-29T21:22:52+08:00">
+                2017-01-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/01/29/快速跑起nutzbook项目/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/29/快速跑起nutzbook项目/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/01/29/快速跑起nutzbook项目/" class="leancloud_visitors" data-flag-title="快速跑起nutzbook-project项目">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://github.com/wendal/nutz-book" target="_blank" rel="external">nutzbook-project</a>项目最早是wendal同学写教程时的一个副产品，用于做示例教学用的。后来随着功能的增加与完善渐渐进化成了<a href="https://nutz.cn" target="_blank" rel="external">nutz社区论坛</a>的源码</p>
+<p>这里说下怎么快速的搭建起该项目</p>
+<ol>
+<li>将<a href="https://github.com/wendal/nutz-book-project" target="_blank" rel="external">nutzbook-project</a>源码clone到本地</li>
+<li>使用eclipse等ide，以maven方式导入该项目</li>
+<li>使用nutz-web的启动器跑起该项目，检查启动日志</li>
+<li>修改几个配置项（数据库等指向本地)，再次启动</li>
+</ol>
+<h2 id="clone源码到本地"><a href="#clone源码到本地" class="headerlink" title="clone源码到本地"></a>clone源码到本地</h2><p>没啥好说的，命令行下执行命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> git@github.com:wendal/nutz-book-project.git</div><div class="line">or</div><div class="line">git <span class="built_in">clone</span> https://github.com/wendal/nutz-book-project.git</div></pre></td></tr></table></figure>
+<h2 id="maven导入项目"><a href="#maven导入项目" class="headerlink" title="maven导入项目"></a>maven导入项目</h2><p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-29-135512.jpg" alt=""></p>
+<p>导入后如果项目提示有错误，基本上是以下几类问题</p>
+<ol>
+<li><p>编译器对于html，js等文件格式校验错误。</p>
+<p> 这类问题是由于使用了某些模板引擎或者特别格式写法导致的，其实并不是真的错误，可以通过关闭IDE中的相关校验关闭检查</p>
+<p> <img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-29-142613.jpg" alt=""></p>
+</li>
+<li><p>mvn错误。</p>
+<p>比如可能会遇到类似 Failure to transfer com.thoughtworks.xstream:xstream:jar:1.3.1 from <a href="https://repo.maven" target="_blank" rel="external">https://repo.maven</a>….. 这种就是网络问题导致下载失败或下载不完整，需要先查看下本地 ~/.m2/repository 目录中是否有该包名的目录，看看对应目录下文件是否下载不完整，基本上删除后重新下载就好了。当然可能需要你翻下墙才能顺利下载。还有一种情况就是强制更新下本地的依赖库就能解决</p>
+<p> <img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-29-142709.jpg" alt=""></p>
+<p> <img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-29-142736.jpg" alt=""></p>
+</li>
+</ol>
+<h2 id="使用nutz-web启动"><a href="#使用nutz-web启动" class="headerlink" title="使用nutz-web启动"></a>使用nutz-web启动</h2><p>如果项目已经不报错了，新建一个源码目录，添加一个启动类使用nutz-web提供的启动类尝试启动项目</p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-29-144048.jpg" alt=""></p>
+<p>直接运行后，log中会打出类似的log</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="number">22</span>:<span class="number">41</span>:<span class="number">18.731</span> ERROR (DruidDataSource.java:<span class="number">2001</span>) run - create connection error, url: jdbc:mysql:<span class="comment">//127.0.0.1:3306/nutzbook, errorCode 0, state 08S01</span></div><div class="line">com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure</div><div class="line"></div><div class="line">The last packet sent successfully to the server was <span class="number">0</span> milliseconds ago. The driver has not received any packets from the server.</div><div class="line">trueat sun.reflect.GeneratedConstructorAccessor53.newInstance(Unknown Source) ~[?:?]</div><div class="line">trueat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:<span class="number">45</span>) ~[?:<span class="number">1.8</span>.0]</div><div class="line">trueat java.lang.reflect.Constructor.newInstance(Constructor.java:<span class="number">408</span>) ~[?:<span class="number">1.8</span>.0]</div><div class="line">trueat com.mysql.jdbc.Util.handleNewInstance(Util.java:<span class="number">425</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:<span class="number">989</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.mysql.jdbc.MysqlIO.&lt;init&gt;(MysqlIO.java:<span class="number">341</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:<span class="number">2251</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:<span class="number">2284</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:<span class="number">2083</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.mysql.jdbc.ConnectionImpl.&lt;init&gt;(ConnectionImpl.java:<span class="number">806</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.mysql.jdbc.JDBC4Connection.&lt;init&gt;(JDBC4Connection.java:<span class="number">47</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat sun.reflect.GeneratedConstructorAccessor50.newInstance(Unknown Source) ~[?:?]</div><div class="line">trueat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:<span class="number">45</span>) ~[?:<span class="number">1.8</span>.0]</div><div class="line">trueat java.lang.reflect.Constructor.newInstance(Constructor.java:<span class="number">408</span>) ~[?:<span class="number">1.8</span>.0]</div><div class="line">trueat com.mysql.jdbc.Util.handleNewInstance(Util.java:<span class="number">425</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:<span class="number">410</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:<span class="number">328</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:<span class="number">148</span>) ~[druid-<span class="number">1.0</span>.27.jar:<span class="number">1.0</span>.27]</div><div class="line">trueat com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:<span class="number">211</span>) ~[druid-<span class="number">1.0</span>.27.jar:<span class="number">1.0</span>.27]</div><div class="line">trueat com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:<span class="number">142</span>) ~[druid-<span class="number">1.0</span>.27.jar:<span class="number">1.0</span>.27]</div><div class="line">trueat com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:<span class="number">1427</span>) ~[druid-<span class="number">1.0</span>.27.jar:<span class="number">1.0</span>.27]</div><div class="line">trueat com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:<span class="number">1481</span>) ~[druid-<span class="number">1.0</span>.27.jar:<span class="number">1.0</span>.27]</div><div class="line">trueat com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:<span class="number">1998</span>) [druid-<span class="number">1.0</span>.27.jar:<span class="number">1.0</span>.27]</div><div class="line">Caused by: java.net.ConnectException: Connection refused</div></pre></td></tr></table></figure>
+<p>可以看到基本都是数据库连接错误。</p>
+<h2 id="修改为本地配置项，再次启动服务"><a href="#修改为本地配置项，再次启动服务" class="headerlink" title="修改为本地配置项，再次启动服务"></a>修改为本地配置项，再次启动服务</h2><p>这里需要修改nutzbook的配置项，或使用本地配置项覆盖默认配置项。这里推荐第二种做法，也就是找到nutzbook默认配置文件，然后copy一份到刚刚建立的那个目录下，记得要跟默认配置放在同样的目录结构中，文件名也不能修改，这样才能达到覆盖的目的。</p>
+<p>基本逻辑就是发现什么配置有问题就copy一份过来改成本地可访问的即可。</p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-29-153008.jpg" alt=""></p>
+<p>这里需要启动一个mysql服务(配置参考db.properties)，一个redis服务（默认配置即可），然后修改topic.properties目录指向本地可访问目录。</p>
+<p>再次启动MyLauncher即可正常运行服务了。然后在浏览器中访问 <a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a> 如果能看到下图，恭喜你已经跑起来了。</p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-29-152921.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://blog.pangwu86.pw/2017/01/21/web页面返回顶部/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1577,150 +1750,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.pangwu86.pw/2014/08/16/好用的安卓rom/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="胖五">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="胖五talk">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="胖五talk" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2014/08/16/好用的安卓rom/" itemprop="url">
-                  好用的安卓ROM
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-08-16T22:02:27+08:00">
-                2014-08-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2014/08/16/好用的安卓rom/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/08/16/好用的安卓rom/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2014/08/16/好用的安卓rom/" class="leancloud_visitors" data-flag-title="好用的安卓ROM">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="/images/good_android_rom.jpg" alt="好基友, 抄苹果也要搞在一起!"></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2014/08/16/好用的安卓rom/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1768,7 +1797,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
