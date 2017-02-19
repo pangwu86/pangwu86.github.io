@@ -101,9 +101,9 @@
 <meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-Jietu20170220-002128.png">
 <meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-165338.jpg">
 <meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-170826.jpg">
-<meta property="og:image" content="http://blog.pangwu86.pw/images/14875247781568.jpg">
+<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-173135.jpg">
 <meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-172120.jpg">
-<meta property="og:updated_time" content="2017-02-19T17:26:12.000Z">
+<meta property="og:updated_time" content="2017-02-19T17:31:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="借用Automator批量下载头像的方法（完善篇）">
 <meta name="twitter:description" content="上篇文章的最后说要解决的几个问题通过一个下午的折腾终于搞定了。
@@ -413,7 +413,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>)</span>&#123;	</div><div class="line"></div><div class="line">    <span class="comment">// safari中执行</span></div><div class="line">    <span class="keyword">var</span> Safari = Application(<span class="string">'Safari'</span>);</div><div class="line">    <span class="keyword">var</span> cutab = Safari.windows[<span class="number">0</span>].currentTab;</div><div class="line">    <span class="keyword">var</span> imgs = [];</div><div class="line">    <span class="keyword">var</span> scriptText = <span class="string">'document.getElementsByTagName("img").length'</span>;</div><div class="line">    <span class="keyword">var</span> imax = Safari.doJavaScript(scriptText, &#123;<span class="attr">in</span>: cutab&#125;);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> x = <span class="number">0</span>; x &lt; imax; x++) &#123;</div><div class="line">        scriptText = <span class="string">'document.getElementsByTagName("img")['</span> + x + <span class="string">'].src'</span>;</div><div class="line">        imgs.push(Safari.doJavaScript(scriptText, &#123;<span class="attr">in</span>: cutab&#125;));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> imgs;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>最终成功拿到了页面中所有图片的地址。</p>
 <p>接着就是使用Automator自带的图片过滤与下载功能了</p>
-<p><img src="/images/14875247781568.jpg" alt=""></p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-173135.jpg" alt=""></p>
 <h2 id="最后总结"><a href="#最后总结" class="headerlink" title="最后总结"></a>最后总结</h2><p>最终的程序如下：</p>
 <p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-172120.jpg" alt=""></p>
 <p>虽然看着步骤很多，但其实每一步操作都只做了一件事情。</p>
