@@ -84,16 +84,33 @@
 
 
 
-<meta name="description" content="Life is short, Play more!">
+<meta name="description" content="上篇文章的最后说要解决的几个问题通过一个下午的折腾终于搞定了。
+先放程序，需要的拿走，后面会讲解实现思路与遇到的坑
+百度云：https://pan.baidu.com/s/1o8dNQxcGithub：https://github.com/pangwu86/AutomatorCollection
+程序使用前必要设置由于程序需要控制Safari浏览器进行一定的操作，所以需要开启Safari中“允许A">
 <meta property="og:type" content="article">
 <meta property="og:title" content="借用Automator批量下载头像的方法（完善篇）">
 <meta property="og:url" content="http://blog.pangwu86.pw/2017/02/19/借用Automator批量下载头像的方法（完善篇）/index.html">
 <meta property="og:site_name" content="胖五talk">
-<meta property="og:description" content="Life is short, Play more!">
-<meta property="og:updated_time" content="2017-02-19T15:07:17.000Z">
+<meta property="og:description" content="上篇文章的最后说要解决的几个问题通过一个下午的折腾终于搞定了。
+先放程序，需要的拿走，后面会讲解实现思路与遇到的坑
+百度云：https://pan.baidu.com/s/1o8dNQxcGithub：https://github.com/pangwu86/AutomatorCollection
+程序使用前必要设置由于程序需要控制Safari浏览器进行一定的操作，所以需要开启Safari中“允许A">
+<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-162509.jpg">
+<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-162249.jpg">
+<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-Jietu20170220-002128.png">
+<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-165338.jpg">
+<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-170826.jpg">
+<meta property="og:image" content="http://blog.pangwu86.pw/images/14875247781568.jpg">
+<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-172120.jpg">
+<meta property="og:updated_time" content="2017-02-19T17:26:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="借用Automator批量下载头像的方法（完善篇）">
-<meta name="twitter:description" content="Life is short, Play more!">
+<meta name="twitter:description" content="上篇文章的最后说要解决的几个问题通过一个下午的折腾终于搞定了。
+先放程序，需要的拿走，后面会讲解实现思路与遇到的坑
+百度云：https://pan.baidu.com/s/1o8dNQxcGithub：https://github.com/pangwu86/AutomatorCollection
+程序使用前必要设置由于程序需要控制Safari浏览器进行一定的操作，所以需要开启Safari中“允许A">
+<meta name="twitter:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-162509.jpg">
 
 
 
@@ -346,7 +363,63 @@
       
 
       
-        
+        <p><a href="http://pangwu86.com/2017/02/19/%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD%E5%A4%B4%E5%83%8F%E7%9A%84%E6%96%B9%E6%B3%95/" target="_blank" rel="external">上篇文章</a>的最后说要解决的几个问题通过一个下午的折腾终于搞定了。</p>
+<p>先放程序，需要的拿走，后面会讲解实现思路与遇到的坑</p>
+<p>百度云：<a href="https://pan.baidu.com/s/1o8dNQxc" target="_blank" rel="external">https://pan.baidu.com/s/1o8dNQxc</a><br>Github：<a href="https://github.com/pangwu86/AutomatorCollection" target="_blank" rel="external">https://github.com/pangwu86/AutomatorCollection</a></p>
+<h2 id="程序使用前必要设置"><a href="#程序使用前必要设置" class="headerlink" title="程序使用前必要设置"></a>程序使用前必要设置</h2><p>由于程序需要控制Safari浏览器进行一定的操作，所以需要开启Safari中“允许Apple事件中的javascript”功能，具体操作步骤如下：</p>
+<ol>
+<li>开启Safari浏览器的开发者模式，在偏好设置中，“高级”界面最下方勾选中即可。</li>
+<li>勾选“允许Apple事件中的javascript”，在菜单栏中“开发”下，保持其为勾选状态，这里是需要用户输入密码的。</li>
+</ol>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-162509.jpg" alt=""></p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-162249.jpg" alt=""></p>
+<p>否者的话在运行过程中就会弹出下面的提示了</p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-Jietu20170220-002128.png" alt=""></p>
+<a id="more"></a>
+<h2 id="实现自动打开页面并下载图片"><a href="#实现自动打开页面并下载图片" class="headerlink" title="实现自动打开页面并下载图片"></a>实现自动打开页面并下载图片</h2><p>先分解下整个实现的过程:</p>
+<ol>
+<li>新建文件夹以便后面保存下载图片。这里文件夹采用“头像”+“当前时间”来进行命名，这样可以保证每次生成的目录都不会重名</li>
+<li>打开浏览器，并打开指定的页面。这里是唤起Safari浏览器，因为系统默认自带，而且Automator也是对Safari有相关操作的支持</li>
+<li>控制页面不断向下滚动加载更多图片。默认首页只有十几张图片远远不够用，所以需要多加载一些出来。</li>
+<li>解析页面中图片地址。</li>
+<li>下载图片到指定文件夹中</li>
+</ol>
+<p>之后的操作就是<a href="http://pangwu86.com/2017/02/19/%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD%E5%A4%B4%E5%83%8F%E7%9A%84%E6%96%B9%E6%B3%95/" target="_blank" rel="external">上篇文章</a>的内容了，直接将相关操作加到后面即可。</p>
+<p>接下来说一下实现过程中的难点</p>
+<h3 id="浏览器的相关控制"><a href="#浏览器的相关控制" class="headerlink" title="浏览器的相关控制"></a>浏览器的相关控制</h3><p>mac系统中可以通过AppleScript脚本对系统中的程序进行一定的控制。</p>
+<p>打开浏览器并打开页面：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">on</span> <span class="built_in">run</span></div><div class="line">    <span class="keyword">tell</span> <span class="built_in">application</span> <span class="string">"Safari"</span> <span class="keyword">to</span> open location <span class="string">"http://image.baidu.com/search/index?tn=baiduimage&amp;ps=1&amp;lm=-1&amp;cl=2&amp;nc=1&amp;ie=utf-8&amp;word=头像"</span></div><div class="line"><span class="keyword">end</span> <span class="built_in">run</span></div></pre></td></tr></table></figure>
+<p>打开页面地址其实可以通过变量进行设置，而且这个变量也可以通过系统的剪切板进行设置，这样就可以修改成一个更加通用的图片下载工具。</p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-165338.jpg" alt=""></p>
+<p>不过这里为了能达到<strong>“一键下载”</strong>的功能所以将地址直接写在了脚本中。</p>
+<p>为了能看到接下来的操作，还加上了将浏览器切换到前台的操作：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">tell</span> <span class="built_in">application</span> <span class="string">"System Events"</span></div><div class="line">    <span class="keyword">set</span> <span class="built_in">frontmost</span> <span class="keyword">of</span> process <span class="string">"Safari"</span> <span class="keyword">to</span> <span class="literal">true</span></div><div class="line">    keystroke <span class="string">"1"</span> using command down</div><div class="line">    <span class="built_in">delay</span> <span class="number">0.2</span></div><div class="line"><span class="keyword">end</span> <span class="keyword">tell</span></div></pre></td></tr></table></figure>
+<h3 id="页面的相关控制"><a href="#页面的相关控制" class="headerlink" title="页面的相关控制"></a>页面的相关控制</h3><p>在需要加载更多图片的时候要将页面不停的向下滚动，这里就是靠javascript来控制滚动条不断的移动到底部从而达到目的。</p>
+<p>实现滚动条到底的js脚本非常简单，这里封装了一个方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">gotoBottom</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> $mybody = <span class="built_in">document</span>.body;</div><div class="line">    $mybody.scrollTop = $mybody.scrollHeight</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Automator中调用js有一些特别的写法与限制，首先需要一个run方法，是否有传入参数可以根据Automator中的设置来定</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">// 脚本内容</span></div><div class="line">    <span class="keyword">var</span> scriptText = <span class="string">""</span>;</div><div class="line">   </div><div class="line">    <span class="comment">// safari中执行</span></div><div class="line">    <span class="keyword">var</span> Safari = Application(<span class="string">'Safari'</span>);</div><div class="line">    <span class="keyword">var</span> cutab = Safari.windows[<span class="number">0</span>].currentTab;</div><div class="line">    Safari.doJavaScript(scriptText, &#123;<span class="attr">in</span>: cutab&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里<strong>Safari.doJavaScript</strong>是有返回值的，后面会详细再说。</p>
+<p>这里<strong>scriptText</strong>需要将js代码进行拼接，所以推荐现在其他地方写好并测试通过后在加到Automator中。<br>最终这里实现了一个连续调用20次滚动到底的操作的代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params">input</span>)</span>&#123;</div><div class="line">    <span class="comment">// 向下滚动脚本</span></div><div class="line">    <span class="keyword">var</span> scriptText = <span class="string">""</span>;</div><div class="line">    scriptText += <span class="string">'var _gbTimer = null;'</span>;</div><div class="line">    scriptText += <span class="string">'var _gbCount = 0;'</span>;</div><div class="line">    scriptText += <span class="string">'var _gbMax = 20;'</span>;</div><div class="line">    scriptText += <span class="string">'var $mybody = document.body;'</span>;</div><div class="line">    scriptText += <span class="string">'function gotoBottom()&#123;$mybody.scrollTop = $mybody.scrollHeight&#125;;'</span>;</div><div class="line">    scriptText += <span class="string">'_gbTimer = setInterval(function()&#123;if(_gbCount &lt; _gbMax)&#123;gotoBottom(); _gbCount++&#125; else &#123;clearInterval(_gbTimer)&#125;&#125;, 200);'</span>;</div><div class="line"></div><div class="line">    <span class="comment">// safari中执行</span></div><div class="line">    <span class="keyword">var</span> Safari = Application(<span class="string">'Safari'</span>);</div><div class="line">    <span class="keyword">var</span> cutab = Safari.windows[<span class="number">0</span>].currentTab;</div><div class="line">    Safari.doJavaScript(scriptText, &#123;<span class="attr">in</span>: cutab&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="获取图片url的坑"><a href="#获取图片url的坑" class="headerlink" title="获取图片url的坑"></a>获取图片url的坑</h3><p>这里本来是使用Automator自带的方法来解析页面中图片地址的</p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-170826.jpg" alt=""></p>
+<p>但经过测试发现，该操作最后得到的图片地址只有页面刚刚加载完成时的那些，通过滚动到底部加载的图片并没有被解析到。</p>
+<p>后来发现该操作的输入的参数是网页的url，也就是说其他它的内部实现其实是“通过一个内置的浏览器打开对应url，然后解析页面中的图片地址”，所以跟我们之前打开的浏览器窗口没有半毛钱关系，也就无法拿到下面加载出来的图片地址了。</p>
+<p>所以这里继续采用javascript的方式来获取页面的图片地址。</p>
+<p>实现一个js方法获取图片的地址并放到一个数组里，然后返回到Automator：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">// 获取图片数量</span></div><div class="line">    <span class="keyword">var</span> scriptText = <span class="string">""</span>;</div><div class="line">    scriptText += <span class="string">'function allImages()&#123;'</span>;</div><div class="line">    scriptText += <span class="string">' var imgs = [];'</span>;</div><div class="line">    scriptText += <span class="string">' var $imgs = document.getElementsByTagName("img");'</span>;</div><div class="line">    scriptText += <span class="string">' var imax = $imgs.length;'</span>;</div><div class="line">    scriptText += <span class="string">' for(var i=0;i&lt;imax;i++)&#123;imgs.push($imgs[i].src);console.log($imgs[i].src)&#125;'</span>;</div><div class="line">    scriptText += <span class="string">' console.log("hasimg:" + imgs.length);'</span>;</div><div class="line">    scriptText += <span class="string">' return imgs;'</span>;</div><div class="line">    scriptText += <span class="string">'&#125;;'</span>;</div><div class="line">    scriptText += <span class="string">'allImages();'</span>;</div><div class="line"></div><div class="line">    <span class="comment">// safari中执行</span></div><div class="line">    <span class="keyword">var</span> Safari = Application(<span class="string">'Safari'</span>);</div><div class="line">    <span class="keyword">var</span> cutab = Safari.windows[<span class="number">0</span>].currentTab;</div><div class="line">    <span class="keyword">var</span> allimgs = Safari.doJavaScript(scriptText, &#123;<span class="attr">in</span>: cutab&#125;);</div><div class="line">    <span class="keyword">return</span> allimgs;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>虽然<strong>Safari.doJavaScript</strong>是可以有返回值的，但上述写法却始终拿不到。<br>经过测试发现<strong>Safari.doJavaScript</strong>执行那种直接返回内容的脚本可以，对于执行方法的返回值无效，所以修改后的脚本如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>)</span>&#123;	</div><div class="line"></div><div class="line">    <span class="comment">// safari中执行</span></div><div class="line">    <span class="keyword">var</span> Safari = Application(<span class="string">'Safari'</span>);</div><div class="line">    <span class="keyword">var</span> cutab = Safari.windows[<span class="number">0</span>].currentTab;</div><div class="line">    <span class="keyword">var</span> imgs = [];</div><div class="line">    <span class="keyword">var</span> scriptText = <span class="string">'document.getElementsByTagName("img").length'</span>;</div><div class="line">    <span class="keyword">var</span> imax = Safari.doJavaScript(scriptText, &#123;<span class="attr">in</span>: cutab&#125;);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> x = <span class="number">0</span>; x &lt; imax; x++) &#123;</div><div class="line">        scriptText = <span class="string">'document.getElementsByTagName("img")['</span> + x + <span class="string">'].src'</span>;</div><div class="line">        imgs.push(Safari.doJavaScript(scriptText, &#123;<span class="attr">in</span>: cutab&#125;));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> imgs;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>最终成功拿到了页面中所有图片的地址。</p>
+<p>接着就是使用Automator自带的图片过滤与下载功能了</p>
+<p><img src="/images/14875247781568.jpg" alt=""></p>
+<h2 id="最后总结"><a href="#最后总结" class="headerlink" title="最后总结"></a>最后总结</h2><p>最终的程序如下：</p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-172120.jpg" alt=""></p>
+<p>虽然看着步骤很多，但其实每一步操作都只做了一件事情。</p>
+<p>一个本来看上去很复杂的工作也就这样被层层分解为了一件件小工作，这才是最常见也最有效的解决问题之道呀。</p>
+<p>最后说一句，Automator真的很强大，熟练掌握以后真的是可以做到事半功倍了。</p>
+
       
     </div>
 
@@ -463,8 +536,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -533,6 +615,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#程序使用前必要设置"><span class="nav-number">1.</span> <span class="nav-text">程序使用前必要设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现自动打开页面并下载图片"><span class="nav-number">2.</span> <span class="nav-text">实现自动打开页面并下载图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器的相关控制"><span class="nav-number">2.1.</span> <span class="nav-text">浏览器的相关控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面的相关控制"><span class="nav-number">2.2.</span> <span class="nav-text">页面的相关控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取图片url的坑"><span class="nav-number">2.3.</span> <span class="nav-text">获取图片url的坑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后总结"><span class="nav-number">3.</span> <span class="nav-text">最后总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>

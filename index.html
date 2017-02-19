@@ -351,9 +351,25 @@
 
       
         
-          
-            
-          
+          <p><a href="http://pangwu86.com/2017/02/19/%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD%E5%A4%B4%E5%83%8F%E7%9A%84%E6%96%B9%E6%B3%95/">上篇文章</a>的最后说要解决的几个问题通过一个下午的折腾终于搞定了。</p>
+<p>先放程序，需要的拿走，后面会讲解实现思路与遇到的坑</p>
+<p>百度云：<a href="https://pan.baidu.com/s/1o8dNQxc">https://pan.baidu.com/s/1o8dNQxc</a><br>Github：<a href="https://github.com/pangwu86/AutomatorCollection">https://github.com/pangwu86/AutomatorCollection</a></p>
+<h2 id="程序使用前必要设置"><a href="#程序使用前必要设置" class="headerlink" title="程序使用前必要设置"></a>程序使用前必要设置</h2><p>由于程序需要控制Safari浏览器进行一定的操作，所以需要开启Safari中“允许Apple事件中的javascript”功能，具体操作步骤如下：</p>
+<ol>
+<li>开启Safari浏览器的开发者模式，在偏好设置中，“高级”界面最下方勾选中即可。</li>
+<li>勾选“允许Apple事件中的javascript”，在菜单栏中“开发”下，保持其为勾选状态，这里是需要用户输入密码的。</li>
+</ol>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-162509.jpg" alt=""></p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-162249.jpg" alt=""></p>
+<p>否者的话在运行过程中就会弹出下面的提示了</p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-19-Jietu20170220-002128.png" alt=""></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/19/借用Automator批量下载头像的方法（完善篇）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -490,12 +506,20 @@
 
       
         
-          <p>项目中遇到问题，需要模拟用户操作，为了看上去像是真实用户所以需要一堆头像图片…</p>
+          <p><strong>02.21更新, 完善篇已出，需要新版本程序走这里<a href="http://pangwu86.com/2017/02/19/%E5%80%9F%E7%94%A8Automator%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD%E5%A4%B4%E5%83%8F%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%88%E5%AE%8C%E5%96%84%E7%AF%87%EF%BC%89/">传送门</a></strong>  </p>
+<p>项目中遇到问题，需要模拟用户操作，为了看上去像是真实用户所以需要一堆头像图片…</p>
 <p>方法很简单，只有2步</p>
 <ol>
 <li>找到并下载一批适合当做头像的图片</li>
 <li>批量重命名这堆图片并修改为指定大小</li>
 </ol>
+<h2 id="利用百度搜索快速下载头像"><a href="#利用百度搜索快速下载头像" class="headerlink" title="利用百度搜索快速下载头像"></a>利用百度搜索快速下载头像</h2><p>无需其他工具，一个浏览器就够了</p>
+<p>这里用到的百度，直接百度图片就能搜到一堆(<a href="http://image.baidu.com/search/index?tn=baiduimage&amp;ps=1&amp;lm=-1&amp;cl=2&amp;nc=1&amp;ie=utf-8&amp;word=%E5%A4%B4%E5%83%8F">传送门</a>)，如果其他网页也有这样符合要求的图片后面也是一样的操作</p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-18-184929.jpg" alt=""></p>
+<p>打开页面后尽情的往下滚动页面，图片就会源源不断的加载出来，当你觉得差不多的够了的时候，ctrl+s(mac上command+s)保存当前网页到本地，记得要选“网页，全部”，这样刚才加载的图片就都保存在本地了</p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-18-185153.jpg" alt=""></p>
+<p>打开那个下载的文件夹就能看到图片，第一步完成</p>
+<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-02-18-185430.jpg" alt=""></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/02/19/批量下载头像的方法/#more" rel="contents">
@@ -639,43 +663,21 @@
 
       
         
-          
-            <p><a href="https://github.com/wendal/nutz-book" target="_blank" rel="external">nutzbook-project</a>项目最早是wendal同学写教程时的一个副产品，用于做示例教学用的。后来随着功能的增加与完善渐渐进化成了<a href="https://nutz.cn" target="_blank" rel="external">nutz社区论坛</a>的源码</p>
+          <p><a href="https://github.com/wendal/nutz-book">nutzbook-project</a>项目最早是wendal同学写教程时的一个副产品，用于做示例教学用的。后来随着功能的增加与完善渐渐进化成了<a href="https://nutz.cn">nutz社区论坛</a>的源码</p>
 <p>这里说下怎么快速的搭建起该项目</p>
 <ol>
-<li>将<a href="https://github.com/wendal/nutz-book-project" target="_blank" rel="external">nutzbook-project</a>源码clone到本地</li>
+<li>将<a href="https://github.com/wendal/nutz-book-project">nutzbook-project</a>源码clone到本地</li>
 <li>使用eclipse等ide，以maven方式导入该项目</li>
 <li>使用nutz-web的启动器跑起该项目，检查启动日志</li>
 <li>修改几个配置项（数据库等指向本地)，再次启动</li>
 </ol>
-<h2 id="clone源码到本地"><a href="#clone源码到本地" class="headerlink" title="clone源码到本地"></a>clone源码到本地</h2><p>没啥好说的，命令行下执行命令</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> git@github.com:wendal/nutz-book-project.git</div><div class="line">or</div><div class="line">git <span class="built_in">clone</span> https://github.com/wendal/nutz-book-project.git</div></pre></td></tr></table></figure>
-<h2 id="maven导入项目"><a href="#maven导入项目" class="headerlink" title="maven导入项目"></a>maven导入项目</h2><p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-29-135512.jpg" alt=""></p>
-<p>导入后如果项目提示有错误，基本上是以下几类问题</p>
-<ol>
-<li><p>编译器对于html，js等文件格式校验错误。</p>
-<p> 这类问题是由于使用了某些模板引擎或者特别格式写法导致的，其实并不是真的错误，可以通过关闭IDE中的相关校验关闭检查</p>
-<p> <img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-29-142613.jpg" alt=""></p>
-</li>
-<li><p>mvn错误。</p>
-<p>比如可能会遇到类似 Failure to transfer com.thoughtworks.xstream:xstream:jar:1.3.1 from <a href="https://repo.maven" target="_blank" rel="external">https://repo.maven</a>….. 这种就是网络问题导致下载失败或下载不完整，需要先查看下本地 ~/.m2/repository 目录中是否有该包名的目录，看看对应目录下文件是否下载不完整，基本上删除后重新下载就好了。当然可能需要你翻下墙才能顺利下载。还有一种情况就是强制更新下本地的依赖库就能解决</p>
-<p> <img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-29-142709.jpg" alt=""></p>
-<p> <img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-29-142736.jpg" alt=""></p>
-</li>
-</ol>
-<h2 id="使用nutz-web启动"><a href="#使用nutz-web启动" class="headerlink" title="使用nutz-web启动"></a>使用nutz-web启动</h2><p>如果项目已经不报错了，新建一个源码目录，添加一个启动类使用nutz-web提供的启动类尝试启动项目</p>
-<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-29-144048.jpg" alt=""></p>
-<p>直接运行后，log中会打出类似的log</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="number">22</span>:<span class="number">41</span>:<span class="number">18.731</span> ERROR (DruidDataSource.java:<span class="number">2001</span>) run - create connection error, url: jdbc:mysql:<span class="comment">//127.0.0.1:3306/nutzbook, errorCode 0, state 08S01</span></div><div class="line">com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure</div><div class="line"></div><div class="line">The last packet sent successfully to the server was <span class="number">0</span> milliseconds ago. The driver has not received any packets from the server.</div><div class="line">trueat sun.reflect.GeneratedConstructorAccessor53.newInstance(Unknown Source) ~[?:?]</div><div class="line">trueat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:<span class="number">45</span>) ~[?:<span class="number">1.8</span>.0]</div><div class="line">trueat java.lang.reflect.Constructor.newInstance(Constructor.java:<span class="number">408</span>) ~[?:<span class="number">1.8</span>.0]</div><div class="line">trueat com.mysql.jdbc.Util.handleNewInstance(Util.java:<span class="number">425</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:<span class="number">989</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.mysql.jdbc.MysqlIO.&lt;init&gt;(MysqlIO.java:<span class="number">341</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:<span class="number">2251</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:<span class="number">2284</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:<span class="number">2083</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.mysql.jdbc.ConnectionImpl.&lt;init&gt;(ConnectionImpl.java:<span class="number">806</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.mysql.jdbc.JDBC4Connection.&lt;init&gt;(JDBC4Connection.java:<span class="number">47</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat sun.reflect.GeneratedConstructorAccessor50.newInstance(Unknown Source) ~[?:?]</div><div class="line">trueat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:<span class="number">45</span>) ~[?:<span class="number">1.8</span>.0]</div><div class="line">trueat java.lang.reflect.Constructor.newInstance(Constructor.java:<span class="number">408</span>) ~[?:<span class="number">1.8</span>.0]</div><div class="line">trueat com.mysql.jdbc.Util.handleNewInstance(Util.java:<span class="number">425</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:<span class="number">410</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:<span class="number">328</span>) ~[mysql-connector-java-<span class="number">5.1</span>.40.jar:<span class="number">5.1</span>.40]</div><div class="line">trueat com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:<span class="number">148</span>) ~[druid-<span class="number">1.0</span>.27.jar:<span class="number">1.0</span>.27]</div><div class="line">trueat com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:<span class="number">211</span>) ~[druid-<span class="number">1.0</span>.27.jar:<span class="number">1.0</span>.27]</div><div class="line">trueat com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:<span class="number">142</span>) ~[druid-<span class="number">1.0</span>.27.jar:<span class="number">1.0</span>.27]</div><div class="line">trueat com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:<span class="number">1427</span>) ~[druid-<span class="number">1.0</span>.27.jar:<span class="number">1.0</span>.27]</div><div class="line">trueat com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:<span class="number">1481</span>) ~[druid-<span class="number">1.0</span>.27.jar:<span class="number">1.0</span>.27]</div><div class="line">trueat com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:<span class="number">1998</span>) [druid-<span class="number">1.0</span>.27.jar:<span class="number">1.0</span>.27]</div><div class="line">Caused by: java.net.ConnectException: Connection refused</div></pre></td></tr></table></figure>
-<p>可以看到基本都是数据库连接错误。</p>
-<h2 id="修改为本地配置项，再次启动服务"><a href="#修改为本地配置项，再次启动服务" class="headerlink" title="修改为本地配置项，再次启动服务"></a>修改为本地配置项，再次启动服务</h2><p>这里需要修改nutzbook的配置项，或使用本地配置项覆盖默认配置项。这里推荐第二种做法，也就是找到nutzbook默认配置文件，然后copy一份到刚刚建立的那个目录下，记得要跟默认配置放在同样的目录结构中，文件名也不能修改，这样才能达到覆盖的目的。</p>
-<p>基本逻辑就是发现什么配置有问题就copy一份过来改成本地可访问的即可。</p>
-<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-29-153008.jpg" alt=""></p>
-<p>这里需要启动一个mysql服务(配置参考db.properties)，一个redis服务（默认配置即可），然后修改topic.properties目录指向本地可访问目录。</p>
-<p>再次启动MyLauncher即可正常运行服务了。然后在浏览器中访问 <a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a> 如果能看到下图，恭喜你已经跑起来了。</p>
-<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-29-152921.jpg" alt=""></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/29/快速跑起nutzbook项目/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -958,6 +960,10 @@
       
         
           <p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-01-20-183329.jpg" alt=""></p>
+<blockquote>
+<p>网页中切换主题，实际上就是在对网页中的元素设置不同的样式所呈现出来的整体显示效果的切换</p>
+</blockquote>
+<p>比如上图中<a href="https://nutzam.com">nutz官网</a>可以发现，亮色与暗色主题对比，网页结构布局是完全一致的，背景色一黑一白，文字颜色也改成了对应背景色可读性良好的颜色。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/01/17/web网页中主题切换的实现思路/#more" rel="contents">
