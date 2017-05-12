@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="旅游," />
+  <meta name="keywords" content="vuejs,前端," />
 
 
 
@@ -84,37 +84,22 @@
 
 
 
-<meta name="description" content="第一次去香港，行程安排的有点满，不过该买的该吃的该看都差不多了。
-总的来说香港没有想象中那么好，到处感觉都是旧旧的，而且作为一个在国内习惯了网上购物，叫个外卖的人来说，香港这方面并不是很方面，据说是因为物流成本与人力成本太高。
-香港的饮食菜太少了，吃了4天就吃到了几片菜叶子，估计也是菜比肉贵。">
+<meta name="description" content="在做给一个图片蒙上一层表格时，由于dom结构设计的问题，列表中的每个数据都生成了一层div，这层div里搞了一个巨大的table来模拟表格，但同一时间列表中只有一层是显示的，其他都是隐藏。
+结果测试后发现，在table内的格子特别多的时候，由于生成了n层的table，整个浏览器就进入假死状态了，特别是你想切换不同的层显示，cpu直接100%
+看来vue在显示隐藏上对于大数据量的div还是有点问题的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="游香港">
-<meta property="og:url" content="http://blog.pangwu86.pw/2017/03/29/游香港/index.html">
+<meta property="og:title" content="避免大量的dom元素显示与隐藏">
+<meta property="og:url" content="http://blog.pangwu86.pw/2017/04/10/避免大了的dom元素显示与隐藏/index.html">
 <meta property="og:site_name" content="胖五talk">
-<meta property="og:description" content="第一次去香港，行程安排的有点满，不过该买的该吃的该看都差不多了。
-总的来说香港没有想象中那么好，到处感觉都是旧旧的，而且作为一个在国内习惯了网上购物，叫个外卖的人来说，香港这方面并不是很方面，据说是因为物流成本与人力成本太高。
-香港的饮食菜太少了，吃了4天就吃到了几片菜叶子，估计也是菜比肉贵。">
-<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-030903.jpg">
-<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-031140.jpg">
-<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-031728.jpg">
-<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-031846.jpg">
-<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-032124.jpg">
-<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-032201.jpg">
-<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-032520.jpg">
-<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-032620.jpg">
-<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-032733.jpg">
-<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-032825.jpg">
-<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-032855.jpg">
-<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-032931.jpg">
-<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-033034.jpg">
-<meta property="og:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-033114.jpg">
-<meta property="og:updated_time" content="2017-04-01T03:31:30.000Z">
+<meta property="og:description" content="在做给一个图片蒙上一层表格时，由于dom结构设计的问题，列表中的每个数据都生成了一层div，这层div里搞了一个巨大的table来模拟表格，但同一时间列表中只有一层是显示的，其他都是隐藏。
+结果测试后发现，在table内的格子特别多的时候，由于生成了n层的table，整个浏览器就进入假死状态了，特别是你想切换不同的层显示，cpu直接100%
+看来vue在显示隐藏上对于大数据量的div还是有点问题的">
+<meta property="og:updated_time" content="2017-05-12T14:49:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="游香港">
-<meta name="twitter:description" content="第一次去香港，行程安排的有点满，不过该买的该吃的该看都差不多了。
-总的来说香港没有想象中那么好，到处感觉都是旧旧的，而且作为一个在国内习惯了网上购物，叫个外卖的人来说，香港这方面并不是很方面，据说是因为物流成本与人力成本太高。
-香港的饮食菜太少了，吃了4天就吃到了几片菜叶子，估计也是菜比肉贵。">
-<meta name="twitter:image" content="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-030903.jpg">
+<meta name="twitter:title" content="避免大量的dom元素显示与隐藏">
+<meta name="twitter:description" content="在做给一个图片蒙上一层表格时，由于dom结构设计的问题，列表中的每个数据都生成了一层div，这层div里搞了一个巨大的table来模拟表格，但同一时间列表中只有一层是显示的，其他都是隐藏。
+结果测试后发现，在table内的格子特别多的时候，由于生成了n层的table，整个浏览器就进入假死状态了，特别是你想切换不同的层显示，cpu直接100%
+看来vue在显示隐藏上对于大数据量的div还是有点问题的">
 
 
 
@@ -142,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.pangwu86.pw/2017/03/29/游香港/"/>
+  <link rel="canonical" href="http://blog.pangwu86.pw/2017/04/10/避免大了的dom元素显示与隐藏/"/>
 
 
 
 
 
-  <title> 游香港 | 胖五talk </title>
+  <title> 避免大量的dom元素显示与隐藏 | 胖五talk </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -271,7 +256,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.pangwu86.pw/2017/03/29/游香港/">
+  <link itemprop="mainEntityOfPage" href="http://blog.pangwu86.pw/2017/04/10/避免大了的dom元素显示与隐藏/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="胖五">
@@ -295,7 +280,7 @@
             
             
               
-                游香港
+                避免大量的dom元素显示与隐藏
               
             
           </h1>
@@ -310,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-29T15:44:35+08:00">
-                2017-03-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-10T15:26:01+08:00">
+                2017-04-10
               </time>
             
 
@@ -329,8 +314,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/29/游香港/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/29/游香港/" itemprop="commentCount"></span>
+                <a href="/2017/04/10/避免大了的dom元素显示与隐藏/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/04/10/避免大了的dom元素显示与隐藏/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -340,7 +325,7 @@
 
           
           
-             <span id="/2017/03/29/游香港/" class="leancloud_visitors" data-flag-title="游香港">
+             <span id="/2017/04/10/避免大了的dom元素显示与隐藏/" class="leancloud_visitors" data-flag-title="避免大量的dom元素显示与隐藏">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -367,23 +352,10 @@
       
 
       
-        <p>第一次去香港，行程安排的有点满，不过该买的该吃的该看都差不多了。</p>
-<p>总的来说香港没有想象中那么好，到处感觉都是旧旧的，而且作为一个在国内习惯了网上购物，叫个外卖的人来说，香港这方面并不是很方面，据说是因为物流成本与人力成本太高。</p>
-<p>香港的饮食菜太少了，吃了4天就吃到了几片菜叶子，估计也是菜比肉贵。</p>
-<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-030903.jpg" alt="" title="第一顿饭，叉烧大王"></p>
-<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-031140.jpg" alt="" title="翠华的猪排饭"></p>
-<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-031728.jpg" alt="" title="最常见的饮品 奶茶"></p>
-<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-031846.jpg" alt="" title="怀旧粤式茶楼 莲香楼"></p>
-<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-032124.jpg" alt="" title="味道一级棒"></p>
-<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-032201.jpg" alt="" title="柠檬王这里是各种排队"></p>
-<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-032520.jpg" alt="" title="终于爬上了平顶山，是真的爬呀"></p>
-<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-032620.jpg" alt="" title="wendal推荐，香港最便宜的午餐方案，哈哈"></p>
-<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-032733.jpg" alt="" title="诚品书店看到的，大陆肯定是出版不了的"></p>
-<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-032825.jpg" alt="" title="维港的夜景"></p>
-<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-032855.jpg" alt="" title="传说中的深井烧鹅"></p>
-<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-032931.jpg" alt="" title="各种蛋，蘑菇同学最爱"></p>
-<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-033034.jpg" alt="" title="回济前的最后一顿大餐，再过一次瘾"></p>
-<p><img src="http://ojz4vjn9t.bkt.clouddn.com/blog/2017-04-01-033114.jpg" alt="" title="飞机上装逼用的"></p>
+        <p>在做给一个图片蒙上一层表格时，由于dom结构设计的问题，列表中的每个数据都生成了一层div，这层div里搞了一个巨大的table来模拟表格，但同一时间列表中只有一层是显示的，其他都是隐藏。</p>
+<p>结果测试后发现，在table内的格子特别多的时候，由于生成了n层的table，整个浏览器就进入假死状态了，特别是你想切换不同的层显示，cpu直接100%</p>
+<p>看来vue在显示隐藏上对于大数据量的div还是有点问题的，估计跟虚拟dom有关。</p>
+<p>所以最终解决方案是优化dom结构，让列表元素共享一个table即可，反正其他的都要隐藏，需要显示的时候重新设置这个table就可以了。最终效果很不错，浏览器就不卡。 </p>
 
       
     </div>
@@ -407,7 +379,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/旅游/" rel="tag"># 旅游</a>
+            <a href="/tags/vuejs/" rel="tag"># vuejs</a>
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
           
         </div>
       
@@ -416,8 +390,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/23/如何实现读取本地图片自动上传服务器/" rel="next" title="如何实现读取本地图片自动上传服务器">
-                <i class="fa fa-chevron-left"></i> 如何实现读取本地图片自动上传服务器
+              <a href="/2017/04/04/walnut添加一个新的app/" rel="next" title="walnut添加一个新的app">
+                <i class="fa fa-chevron-left"></i> walnut添加一个新的app
               </a>
             
           </div>
@@ -426,8 +400,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/31/为walnut设计regapi编辑器/" rel="prev" title="为walnut设计regapi编辑器">
-                为walnut设计regapi编辑器 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/12/五读笔记001-设计的教室/" rel="prev" title="五读笔记001:设计的教室">
+                五读笔记001:设计的教室 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -701,9 +675,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'pangwu86';
-      var disqus_identifier = '2017/03/29/游香港/';
+      var disqus_identifier = '2017/04/10/避免大了的dom元素显示与隐藏/';
 
-      var disqus_title = "游香港";
+      var disqus_title = "避免大量的dom元素显示与隐藏";
 
 
       function run_disqus_script(disqus_script) {
