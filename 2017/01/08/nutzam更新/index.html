@@ -84,14 +84,13 @@
 
 
 
-<meta name="description" content="先吐槽下这周被派遣了一个重要任务，那就是把nutzam的页面适配手机版，打开看了一下，网页版效果还是不错的，切换到手机上发现还是那个页面效果尚可接受，然后切换到文档页就发现没法看了，一行一个字，页面大部分内容被侧边栏的导航给占据了，所以明显这个在实现的时候没有考虑手机去查看
-首页，明明下面没东西了，竟然还有滚动条？！">
+<meta name="description" content="先吐槽下这周被派遣了一个重要任务，那就是把nutzam的页面适配手机版，打开看了一下，网页版效果还是不错的，切换到手机上发现还是那个页面效果尚可接受，然后切换到文档页就发现没法看了，一行一个字，页面大部分内容被侧边栏的导航给占据了，所以明显这个在实现的时候没有考虑手机去查看 首页，明明下面没东西了，竟然还有滚动条？！">
+<meta name="keywords" content="nutz,vuejs,bootstrap">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nutzam更新">
 <meta property="og:url" content="http://blog.pangwu86.pw/2017/01/08/nutzam更新/index.html">
 <meta property="og:site_name" content="胖五talk">
-<meta property="og:description" content="先吐槽下这周被派遣了一个重要任务，那就是把nutzam的页面适配手机版，打开看了一下，网页版效果还是不错的，切换到手机上发现还是那个页面效果尚可接受，然后切换到文档页就发现没法看了，一行一个字，页面大部分内容被侧边栏的导航给占据了，所以明显这个在实现的时候没有考虑手机去查看
-首页，明明下面没东西了，竟然还有滚动条？！">
+<meta property="og:description" content="先吐槽下这周被派遣了一个重要任务，那就是把nutzam的页面适配手机版，打开看了一下，网页版效果还是不错的，切换到手机上发现还是那个页面效果尚可接受，然后切换到文档页就发现没法看了，一行一个字，页面大部分内容被侧边栏的导航给占据了，所以明显这个在实现的时候没有考虑手机去查看 首页，明明下面没东西了，竟然还有滚动条？！">
 <meta property="og:image" content="http://blog.pangwu86.pw/images/14838669883736.jpg">
 <meta property="og:image" content="http://blog.pangwu86.pw/images/14838670924877.jpg">
 <meta property="og:image" content="http://blog.pangwu86.pw/images/nutzam_mobile%E9%A2%84%E8%A7%88.gif">
@@ -99,8 +98,7 @@
 <meta property="og:updated_time" content="2017-01-20T18:26:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nutzam更新">
-<meta name="twitter:description" content="先吐槽下这周被派遣了一个重要任务，那就是把nutzam的页面适配手机版，打开看了一下，网页版效果还是不错的，切换到手机上发现还是那个页面效果尚可接受，然后切换到文档页就发现没法看了，一行一个字，页面大部分内容被侧边栏的导航给占据了，所以明显这个在实现的时候没有考虑手机去查看
-首页，明明下面没东西了，竟然还有滚动条？！">
+<meta name="twitter:description" content="先吐槽下这周被派遣了一个重要任务，那就是把nutzam的页面适配手机版，打开看了一下，网页版效果还是不错的，切换到手机上发现还是那个页面效果尚可接受，然后切换到文档页就发现没法看了，一行一个字，页面大部分内容被侧边栏的导航给占据了，所以明显这个在实现的时候没有考虑手机去查看 首页，明明下面没东西了，竟然还有滚动条？！">
 <meta name="twitter:image" content="http://blog.pangwu86.pw/images/14838669883736.jpg">
 
 
@@ -366,7 +364,7 @@
 <p>修改pages/index.xml，然后将nutz-doc指向本地的目录</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">doc</span> <span class="attr">title</span>=<span class="string">"Nutz的网站"</span> <span class="attr">author</span>=<span class="string">"zozoh(zozohtnt@gmail.com)"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">doc</span> <span class="attr">path</span>=<span class="string">"index.html"</span> <span class="attr">title</span>=<span class="string">"Nutz-程序员小伙伴们的另一个选择"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">doc</span> <span class="attr">path</span>=<span class="string">"core"</span> <span class="attr">title</span>=<span class="string">"Nutz核心包"</span> <span class="attr">doc-base</span>=<span class="string">"~/nutz/doc/manual"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">doc</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>在bash下执行编译命令，如果成功就会生成静态网页到指定目录了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">zdoc2 ~/gitrep/nutzam/pages ~/tmp/nutzam</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">zdoc2 ~/gitrep/nutzam/pages ~/tmp/nutzam</div></pre></td></tr></table></figure>
 <p><em>PS:当前版本的需要启动一个web服务来访问，否者文档页的侧边栏是显示不出来的</em></p>
 <h2 id="修改点与技术选型"><a href="#修改点与技术选型" class="headerlink" title="修改点与技术选型"></a>修改点与技术选型</h2><p>现在的文档是通过zdoc进行编译生成的，所以有些页面或布局模板的使用还需遵守zdoc的规定<br>为了比较快的实现，决定先用bs4实现一版出来</p>
 <p>文档页的侧边栏是zdoc生成的tree.html,这里为了能够方便页面调用需求修改zdoc再输出一份tree.json，也就是仅仅包含侧边栏信息的纯js对象数据</p>
@@ -538,7 +536,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
