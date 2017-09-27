@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="// TODO">
+<meta name="description" content="这篇都是吐槽，没啥干货">
 <meta name="keywords" content="mongodb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mongodb查询数组数据的坑">
 <meta property="og:url" content="http://blog.pangwu86.pw/2017/09/25/mongodb查询数组数据的坑/index.html">
 <meta property="og:site_name" content="胖五talk">
-<meta property="og:description" content="// TODO">
-<meta property="og:updated_time" content="2017-09-27T13:47:31.000Z">
+<meta property="og:description" content="这篇都是吐槽，没啥干货">
+<meta property="og:updated_time" content="2017-09-27T15:20:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mongodb查询数组数据的坑">
-<meta name="twitter:description" content="// TODO">
+<meta name="twitter:description" content="这篇都是吐槽，没啥干货">
 
 
 
@@ -347,7 +347,24 @@
       
 
       
-        <p>// TODO</p>
+        <p>这篇都是吐槽，没啥干货</p>
+<a id="more"></a>    
+<p>数据结构大概是这样的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    ....</div><div class="line">    sc_list: [&#123;</div><div class="line">        <span class="attr">tag</span>: <span class="string">"0"</span>,</div><div class="line">        ....</div><div class="line">    &#125;,&#123;</div><div class="line">        <span class="attr">tag</span>: <span class="string">"1"</span>,</div><div class="line">        ....</div><div class="line">    &#125;,&#123;</div><div class="line">        <span class="attr">tag</span>: <span class="string">"8"</span>,</div><div class="line">        ....</div><div class="line">    &#125;],</div><div class="line">    .....</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>目标是从一堆数据中找到sc_list里tag等于”0”的数据。</p>
+<p>然后意外的发现本地可以查询的语句在生产环境上无效！然后仔细一查发现mongodb的版本不同，本地测试是2.6.x，生产上的是3.2.x，难道是因为语法变了？</p>
+<p>后来仔细查看后发现数组里内容的写法很有多，是me自己写错了。。。。但这里不得不吐槽一下mongodb的文档，一个查询在不同版本的例子还有一些标题的命名规则都不一样，侧边栏的导航标题也是，找起来异常费劲，这也是导致一开始搞错了语法的原因</p>
+<p>最后送上几个不同版本查数组内嵌对象的文档链接：</p>
+<ul>
+<li>2.6 <a href="https://docs.mongodb.com/v2.6/tutorial/query-documents/#array-of-embedded-documents" target="_blank" rel="external">Array of Embedded Documents</a></li>
+<li>3.2 <a href="https://docs.mongodb.com/v3.2/tutorial/query-documents/#array-of-embedded-documents" target="_blank" rel="external">Array of Embedded Documents</a></li>
+<li>3.4 <a href="https://docs.mongodb.com/manual/tutorial/query-array-of-documents/" target="_blank" rel="external">Query an Array of Embedded Documents</a></li>
+<li>3.6 <a href="https://docs.mongodb.com/master/tutorial/query-array-of-documents/" target="_blank" rel="external">Query an Array of Embedded Documents</a></li>
+</ul>
+<p>总结的校训就是</p>
+<blockquote>
+<p>查文档要仔细呀！</p>
+</blockquote>
 
       
     </div>
