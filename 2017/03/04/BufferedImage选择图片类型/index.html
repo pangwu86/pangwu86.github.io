@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java,BufferedImage," />
+  <meta name="keywords" content="Java,图像处理," />
 
 
 
@@ -85,15 +85,15 @@
 
 
 <meta name="description" content="之前为Nutz添加了一个根据文字生成头像的方法Avatar，但遇到了保存为jpg格式生成图片不对的bug。 后来发现是在新建BufferedImage时设置的参数问题： 1BufferedImage im = new BufferedImage(size, size, BufferedImage.TYPE_INT_ARGB); 也就是默认选择了带有Alpha通道的格式，而jpg是没有的所以生成结果">
-<meta name="keywords" content="java,BufferedImage">
+<meta name="keywords" content="Java,图像处理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BufferedImage选择图片类型">
+<meta property="og:title" content="Java图像处理之BufferedImage自动选择图片类型">
 <meta property="og:url" content="http://blog.pangwu86.pw/2017/03/04/BufferedImage选择图片类型/index.html">
 <meta property="og:site_name" content="胖五talk">
 <meta property="og:description" content="之前为Nutz添加了一个根据文字生成头像的方法Avatar，但遇到了保存为jpg格式生成图片不对的bug。 后来发现是在新建BufferedImage时设置的参数问题： 1BufferedImage im = new BufferedImage(size, size, BufferedImage.TYPE_INT_ARGB); 也就是默认选择了带有Alpha通道的格式，而jpg是没有的所以生成结果">
-<meta property="og:updated_time" content="2017-03-04T08:03:53.000Z">
+<meta property="og:updated_time" content="2017-09-27T12:55:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BufferedImage选择图片类型">
+<meta name="twitter:title" content="Java图像处理之BufferedImage自动选择图片类型">
 <meta name="twitter:description" content="之前为Nutz添加了一个根据文字生成头像的方法Avatar，但遇到了保存为jpg格式生成图片不对的bug。 后来发现是在新建BufferedImage时设置的参数问题： 1BufferedImage im = new BufferedImage(size, size, BufferedImage.TYPE_INT_ARGB); 也就是默认选择了带有Alpha通道的格式，而jpg是没有的所以生成结果">
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <title> BufferedImage选择图片类型 | 胖五talk </title>
+  <title> Java图像处理之BufferedImage自动选择图片类型 | 胖五talk </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -275,7 +275,7 @@
             
             
               
-                BufferedImage选择图片类型
+                Java图像处理之BufferedImage自动选择图片类型
               
             
           </h1>
@@ -320,7 +320,7 @@
 
           
           
-             <span id="/2017/03/04/BufferedImage选择图片类型/" class="leancloud_visitors" data-flag-title="BufferedImage选择图片类型">
+             <span id="/2017/03/04/BufferedImage选择图片类型/" class="leancloud_visitors" data-flag-title="Java图像处理之BufferedImage自动选择图片类型">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -353,7 +353,7 @@
 <p>也就是默认选择了带有Alpha通道的格式，而jpg是没有的所以生成结果有了问题。</p>
 <p>本来改成了用户可以手动设定BufferedImage类型，但后来发现其实可以通过用户设定文字颜色与背景色进行判断，如果是带有Alpha通道的比如<strong>rgba</strong>那就应该用BufferedImage.TYPE_INT_ARGB，否者就改成BufferedImage.TYPE_INT_RGB</p>
 <p>java代码可以通过Color去判断Alpha值，这就可以自动设定正确的类型了。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> imageType = BufferedImage.TYPE_INT_RGB;</div><div class="line"><span class="comment">// alpha为255时也就是等同于没有设定alpha通道值</span></div><div class="line"><span class="keyword">if</span> (colorFont.getAlpha() &lt; <span class="number">255</span> || colorBg.getAlpha() &lt; <span class="number">255</span>) &#123; </div><div class="line">  imageType = BufferedImage.TYPE_INT_ARGB;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> imageType = BufferedImage.TYPE_INT_RGB;</div><div class="line"></div><div class="line"><span class="comment">// alpha为255时也就是等同于没有设定alpha通道值</span></div><div class="line"><span class="keyword">if</span> (colorFont.getAlpha() &lt; <span class="number">255</span> || colorBg.getAlpha() &lt; <span class="number">255</span>) &#123; </div><div class="line">  imageType = BufferedImage.TYPE_INT_ARGB;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -377,9 +377,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag"># java</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
-            <a href="/tags/BufferedImage/" rel="tag"># BufferedImage</a>
+            <a href="/tags/图像处理/" rel="tag"># 图像处理</a>
           
         </div>
       
@@ -491,7 +491,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-count">42</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -502,7 +502,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -675,7 +675,7 @@
       var disqus_shortname = 'pangwu86';
       var disqus_identifier = '2017/03/04/BufferedImage选择图片类型/';
 
-      var disqus_title = "BufferedImage选择图片类型";
+      var disqus_title = "Java图像处理之BufferedImage自动选择图片类型";
 
 
       function run_disqus_script(disqus_script) {
