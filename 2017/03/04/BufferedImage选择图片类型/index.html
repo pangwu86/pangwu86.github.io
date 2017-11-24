@@ -91,6 +91,7 @@
 <meta property="og:url" content="http://blog.pangwu86.pw/2017/03/04/BufferedImage选择图片类型/index.html">
 <meta property="og:site_name" content="胖五talk">
 <meta property="og:description" content="之前为Nutz添加了一个根据文字生成头像的方法Avatar，但遇到了保存为jpg格式生成图片不对的bug。 后来发现是在新建BufferedImage时设置的参数问题： 1BufferedImage im = new BufferedImage(size, size, BufferedImage.TYPE_INT_ARGB); 也就是默认选择了带有Alpha通道的格式，而jpg是没有的所以生成结果">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-09-27T12:55:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java图像处理之BufferedImage自动选择图片类型">
@@ -491,7 +492,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-count">44</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -502,7 +503,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">39</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
