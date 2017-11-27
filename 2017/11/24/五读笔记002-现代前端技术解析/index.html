@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端,js," />
+  <meta name="keywords" content="阅读,前端," />
 
 
 
@@ -84,18 +84,19 @@
 
 
 
-<meta name="description" content="一般如果网页特别长的话，经常在页面的右下角会有一个按钮，点击一下滚动条就自动的回到最上面的位置  实现方式的话其实非常的简单，就是监听onscroll事件，然后判断下当前滚动高度，如果需要返回到顶部就把scorllTop设置为0就滚动到顶部了  这里推荐一个简单好用的jq库jQuery.toTop, 源码附在下面了加了点注释。 12345678910111213141516171819202122">
-<meta name="keywords" content="前端,js">
+<meta name="keywords" content="阅读,前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="web页面返回顶部">
-<meta property="og:url" content="http://blog.pangwu86.pw/2017/01/21/web页面返回顶部/index.html">
+<meta property="og:title" content="五读笔记002:现代前端技术解析">
+<meta property="og:url" content="http://blog.pangwu86.pw/2017/11/24/五读笔记002-现代前端技术解析/index.html">
 <meta property="og:site_name" content="胖五talk">
-<meta property="og:description" content="一般如果网页特别长的话，经常在页面的右下角会有一个按钮，点击一下滚动条就自动的回到最上面的位置  实现方式的话其实非常的简单，就是监听onscroll事件，然后判断下当前滚动高度，如果需要返回到顶部就把scorllTop设置为0就滚动到顶部了  这里推荐一个简单好用的jq库jQuery.toTop, 源码附在下面了加了点注释。 12345678910111213141516171819202122">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-01-29T13:17:38.000Z">
+<meta property="og:image" content="https://img1.doubanio.com/lpic/s29428008.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/ouvens/frontend-system-map/master/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%9F%BA%E7%A1%80%E7%AF%87.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ouvens/frontend-system-map/master/%E7%8E%B0%E4%BB%A3%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90_V2%40%E9%AB%98%E6%B8%85.jpg">
+<meta property="og:updated_time" content="2017-11-27T07:49:55.162Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="web页面返回顶部">
-<meta name="twitter:description" content="一般如果网页特别长的话，经常在页面的右下角会有一个按钮，点击一下滚动条就自动的回到最上面的位置  实现方式的话其实非常的简单，就是监听onscroll事件，然后判断下当前滚动高度，如果需要返回到顶部就把scorllTop设置为0就滚动到顶部了  这里推荐一个简单好用的jq库jQuery.toTop, 源码附在下面了加了点注释。 12345678910111213141516171819202122">
+<meta name="twitter:title" content="五读笔记002:现代前端技术解析">
+<meta name="twitter:image" content="https://img1.doubanio.com/lpic/s29428008.jpg">
 
 
 
@@ -123,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.pangwu86.pw/2017/01/21/web页面返回顶部/"/>
+  <link rel="canonical" href="http://blog.pangwu86.pw/2017/11/24/五读笔记002-现代前端技术解析/"/>
 
 
 
 
 
-  <title> web页面返回顶部 | 胖五talk </title>
+  <title> 五读笔记002:现代前端技术解析 | 胖五talk </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -252,7 +253,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.pangwu86.pw/2017/01/21/web页面返回顶部/">
+  <link itemprop="mainEntityOfPage" href="http://blog.pangwu86.pw/2017/11/24/五读笔记002-现代前端技术解析/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="胖五">
@@ -276,7 +277,7 @@
             
             
               
-                web页面返回顶部
+                五读笔记002:现代前端技术解析
               
             
           </h1>
@@ -291,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-21T03:09:01+08:00">
-                2017-01-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-24T22:21:13+08:00">
+                2017-11-24
               </time>
             
 
@@ -310,8 +311,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/21/web页面返回顶部/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/21/web页面返回顶部/" itemprop="commentCount"></span>
+                <a href="/2017/11/24/五读笔记002-现代前端技术解析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/11/24/五读笔记002-现代前端技术解析/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -321,7 +322,7 @@
 
           
           
-             <span id="/2017/01/21/web页面返回顶部/" class="leancloud_visitors" data-flag-title="web页面返回顶部">
+             <span id="/2017/11/24/五读笔记002-现代前端技术解析/" class="leancloud_visitors" data-flag-title="五读笔记002:现代前端技术解析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -348,12 +349,223 @@
       
 
       
-        <p>一般如果网页特别长的话，经常在页面的右下角会有一个按钮，点击一下滚动条就自动的回到最上面的位置</p>
-<blockquote>
-<p>实现方式的话其实非常的简单，就是监听<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/onscroll" target="_blank" rel="external">onscroll事件</a>，然后判断下当前滚动高度，如果需要返回到顶部就把<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollTop" target="_blank" rel="external">scorllTop</a>设置为0就滚动到顶部了</p>
+        <p><img src="https://img1.doubanio.com/lpic/s29428008.jpg" alt="" title="4.5星：对2017年最流行的前端知识有不错的总结"></p>
+<a id="more"></a>
+<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><p>作者的<a href="https://github.com/ouvens/frontend-system-map" target="_blank" rel="external">Github</a>上放出了思维导图，就不自己做了。</p>
+<p><img src="https://raw.githubusercontent.com/ouvens/frontend-system-map/master/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%9F%BA%E7%A1%80%E7%AF%87.png" alt="" title="前端知识基础篇"></p>
+<p><a href="https://raw.githubusercontent.com/ouvens/frontend-system-map/master/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%9F%BA%E7%A1%80%E7%AF%87.png" target="_blank" rel="external">点击下载</a></p>
+<p><img src="https://raw.githubusercontent.com/ouvens/frontend-system-map/master/%E7%8E%B0%E4%BB%A3%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90_V2%40%E9%AB%98%E6%B8%85.jpg" alt="" title="现代前端技术解析"></p>
+<p><a href="https://raw.githubusercontent.com/ouvens/frontend-system-map/master/%E7%8E%B0%E4%BB%A3%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90_V2%40%E9%AB%98%E6%B8%85.jpg" target="_blank" rel="external">点击下载</a></p>
+<h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><blockquote>
+<p>输入网址到展示页面内容，这个过程发生了什么？</p>
 </blockquote>
-<p>这里推荐一个简单好用的jq库<a href="https://github.com/mmkjony/jQuery.toTop" target="_blank" rel="external">jQuery.toTop</a>, 源码附在下面了加了点注释。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> *  Plugin Name: jQuery toTop for smoothly Scroll back to Top</span></div><div class="line"><span class="comment"> *  Plugin URL: https://github.com/mmkjony/jQuery.toTop</span></div><div class="line"><span class="comment"> *  Version: 1.1</span></div><div class="line"><span class="comment"> *  Author: MMK Jony</span></div><div class="line"><span class="comment"> *  Author URL: https://github.com/mmkjony</span></div><div class="line"><span class="comment"> *  License: Licensed under MIT</span></div><div class="line"><span class="comment"> **/</span></div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"> $ </span>)</span>&#123;</div><div class="line"><span class="meta">    'use strict'</span>;</div><div class="line">    </div><div class="line">    $.fn.toTop = <span class="function"><span class="keyword">function</span>(<span class="params">opt</span>)</span>&#123;</div><div class="line">        </div><div class="line">        <span class="comment">// 内部使用的参数</span></div><div class="line">        <span class="keyword">var</span> elem = <span class="keyword">this</span>;</div><div class="line">        <span class="keyword">var</span> win = $(<span class="built_in">window</span>); <span class="comment">// jq窗口对象</span></div><div class="line">        <span class="keyword">var</span> doc = $(<span class="string">'html, body'</span>); <span class="comment">// jq的body对象</span></div><div class="line">        </div><div class="line">        <span class="comment">// 额外配置项</span></div><div class="line">        <span class="keyword">var</span> options = $.extend(&#123;</div><div class="line">            autohide: <span class="literal">true</span>,</div><div class="line">            offset: <span class="number">420</span>,</div><div class="line">            speed: <span class="number">500</span>,</div><div class="line">            position: <span class="literal">true</span>,</div><div class="line">            right: <span class="number">15</span>,</div><div class="line">            bottom: <span class="number">30</span></div><div class="line">        &#125;, opt); <span class="comment">// opt没有时使用上面的默认值</span></div><div class="line">        </div><div class="line">        elem.css(&#123;</div><div class="line">            <span class="string">'cursor'</span>: <span class="string">'pointer'</span></div><div class="line">        &#125;);</div><div class="line">        </div><div class="line">        <span class="comment">// 回滚按钮是否自动隐藏</span></div><div class="line">        <span class="keyword">if</span>(options.autohide)&#123;</div><div class="line">            elem.css(<span class="string">'display'</span>, <span class="string">'none'</span>);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="comment">// 使用内置的布局定位方式，否者自己使用css来做布局定位 </span></div><div class="line">        <span class="keyword">if</span>(options.position)&#123;</div><div class="line">            elem.css(&#123;</div><div class="line">                <span class="string">'position'</span>: <span class="string">'fixed'</span>,</div><div class="line">                <span class="string">'right'</span>: options.right,</div><div class="line">                <span class="string">'bottom'</span>: options.bottom,</div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="comment">// 点击回滚按钮后，将scrollTop设置为0，用时500ms，这样会有一个滚动上去的动画效果</span></div><div class="line">        elem.click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            doc.animate(&#123;<span class="attr">scrollTop</span>: <span class="number">0</span>&#125;, options.speed);</div><div class="line">        &#125;);</div><div class="line">        </div><div class="line">        <span class="comment">// jq的http://api.jquery.com/scroll</span></div><div class="line">        win.scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">var</span> scrolling = win.scrollTop();</div><div class="line">            <span class="comment">// 当页面在顶部区域时隐藏回滚按钮，比较靠页面下部时显示回滚按钮</span></div><div class="line">            <span class="keyword">if</span>(options.autohide)&#123;</div><div class="line">                <span class="keyword">if</span>(scrolling &gt; options.offset)&#123;</div><div class="line">                    elem.fadeIn(options.speed);</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">else</span> elem.fadeOut(options.speed);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;;</div><div class="line">&#125;( jQuery ));</div></pre></td></tr></table></figure>
+<ul>
+<li>浏览器输入网址</li>
+<li>通过DNS解析获取该网站的IP地址(层层查找 浏览器缓存&gt;hosts&gt;路由器缓存&gt;DNS缓存&gt;域名服务器)</li>
+<li>连同Cookie，userAgent等信息向网站发起Get请求</li>
+<li>服务器响应请求，处理后返回响应报文，如果浏览器有缓存资源返回304，一般则返回200与对应的内容</li>
+<li>浏览器接到响应报文后开始下载Html文档</li>
+<li>Html文档解析构建DOM树，并根据标记中的请求下载指定的MIME类型文件，同时设置缓存等内容</li>
+<li>页面开始解析渲染DOM，css根据规则解析并结合DOC树进行网页内容的布局和绘制渲染，JS根据DOM API操作DOM，读取缓存，执行事件绑定等</li>
+</ul>
+<blockquote>
+<p>浏览器数据持久化方案</p>
+</blockquote>
+<ul>
+<li>http缓存根据响应的协议头信息判断是否从服务器端请求文件还是读取本地缓存</li>
+<li>localStorage用于保存提交较大的数据，单个域名下有大小限制，不超过2.6MB为宜，相比Cookie的4KB已经很大了</li>
+<li>localStorage超过最大限制后读写会出错，同一浏览器不同页面共享同一域名下的localStorage内容</li>
+<li>sesstionStorage会在浏览器关闭时自动清空，其他与localStorage一致</li>
+<li>Cookie通过http请求会发送到服务器端，一条记录由键，值，域，过期时间和大小组成</li>
+<li>设置为HttpOnly类型后，浏览器无法通过js读取Cookie，只能用于http请求</li>
+<li>IndexDB操作类似NoSQL，限制大小为50MB</li>
+<li>cacheStorage离线应用可用 <a href="http://www.zhangxinxu.com/wordpress/2017/07/service-worker-cachestorage-offline-develop/" target="_blank" rel="external">参考1</a></li>
+</ul>
+<blockquote>
+<p>前端实时协议</p>
+</blockquote>
+<ol>
+<li>websocket</li>
+<li>Poll和Long-poll</li>
+</ol>
+<p>Long-poll设置一个较长的timeout等待时间，这样网络轮训请求就可以维持一段较长的时间后返回结果。典型使用场景就是网站通过对应的移动客户端进行扫描二维码登陆，用户使用客户端扫描后，浏览器会收到结果自动跳转到下一个页面。</p>
+<blockquote>
+<p>RESTful</p>
+</blockquote>
+<p>交互调用数据的协议风格规范，它建议以一种通用的方式来定义和管理数据交互接口。</p>
+<table>
+<thead>
+<tr>
+<th>http方法</th>
+<th>URI</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td>path/v1/book</td>
+<td>新增</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>path/v1/book</td>
+<td>删除</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>path/v1/book</td>
+<td>全量更新</td>
+</tr>
+<tr>
+<td>DISPATCH</td>
+<td>path/v1/book</td>
+<td>部分更新</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>path/v1/book</td>
+<td>获取</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>分域存放静态资源</p>
+</blockquote>
+<p>将html，js，css，图片等资源分域存放可以有效的突破浏览器同时下载进程的限制。对请求中的cookie进行进行隔离，因为跨域请求默认是不带cookie的，这样便减少了js，css，图片等资源的请求头部大小，从而提升了请求的解析速度。</p>
+<blockquote>
+<p>WebComponent与ShadowDOM</p>
+</blockquote>
+<p>Shadow DOM是html的一个规范，它允许浏览器开发者封装自己的html标签，css样式与特定的js代码，同时让开发人员创建类似video这样的自定义一级标签。</p>
+<blockquote>
+<p>Js导致内存泄露</p>
+</blockquote>
+<p>闭包函数，全局变量，对象属性循环引用，DOM节点删除时未解除事件，Map和Set的属性直接删除等。</p>
+<blockquote>
+<p>CSS样式统一化</p>
+</blockquote>
+<p>三种思路：reset，normalize</p>
+<ul>
+<li>reset 将默认样式全部清除，消除不同浏览器下的默认样式的插一下。</li>
+<li>normalize 在整站样式基本确定的情况下对标签元素统一使用同一个默认样式规则，比如统一margin: 5px</li>
+</ul>
+<p><a href="https://www.zhihu.com/question/20094066" target="_blank" rel="external">知乎答案参考</a></p>
+<blockquote>
+<p>实现动画方案</p>
+</blockquote>
+<ol>
+<li>js直接实现动画</li>
+<li>SVG动画</li>
+<li>CSS3 transition</li>
+<li>CSS3 animation</li>
+<li>Cavans动画</li>
+<li>requestAnimationFrame</li>
+</ol>
+<p>js直接实现动画采用setInterval不间断改变元素属性，一遍间隔为16ms（60帧为流量标准，16ms比1000ms/60帧略小一点）</p>
+<p>在移动开发中直接使用transition动画会让页面变慢，通常通过添加transform: 3D(0,0,0)或transform: translateZ(0)来开启移动动画的GPU加速 <a href="http://blog.csdn.net/hsany330/article/details/50925260" target="_blank" rel="external">参考</a></p>
+<blockquote>
+<p>图片问题</p>
+</blockquote>
+<p>目前主要网站60%以上的流量数据来自图片，如何在保证用户访问网页体验不降低的前提下尽可能降低图片的输出流量很有重要意义。</p>
+<blockquote>
+<p>REM</p>
+</blockquote>
+<p>给html根元素一个根据屏幕自动调整的font-size，页面上的所有元素尺寸全部使用rem为单位，这样无论屏幕怎么变化，页面内容和屏幕的比例都将始终不变。</p>
+<blockquote>
+<p>JQuery</p>
+</blockquote>
+<p>实现了五个方面封装和常见的兼容性问题</p>
+<ol>
+<li>选择器</li>
+<li>DOM操作方法</li>
+<li>事件绑定封装</li>
+<li>AJAX</li>
+<li>Deferred</li>
+</ol>
+<p>优化方案：</p>
+<ul>
+<li>尽可能的使用id选择器进行DOM查询</li>
+<li>缓存一切需要复用的jq对象，使用find子查询</li>
+<li>尽可能使用jq的静态方法</li>
+<li>使用事件代理，不要直接在元素上绑定事件</li>
+<li>jq对象推荐以’$’开头，方面分辨jq对象与普通对象</li>
+</ul>
+<blockquote>
+<p>数据变更检测</p>
+</blockquote>
+<ul>
+<li>手动触发绑定</li>
+<li>脏数据检查</li>
+<li>对象劫持，Object.defineProperties对get，set进行监听</li>
+<li>Proxy</li>
+</ul>
+<blockquote>
+<p>Virtual DOM</p>
+</blockquote>
+<p>前端框架从直接DOM操作到MVP再到MVVM框架，改进原则一直是向着高效，易实现，易维护，易扩展的基本方向发展。但都没有脱离DOM编程的讨论，DOM运行效率不变，以为引入了新的方案。</p>
+<p>使用高效的JS对象来描述DOM结构，然后在JS对象发生变化后将对比前后发生的变化，仅仅将差异化的部分渲染到页面中。</p>
+<p>创建VirtualDOM就是讲一段DOM描述字符串解析成VirtualDOM的过程。</p>
+<p>VirtualDOM的本质区别在于减少了DOM对象的操作，通过JS对象来代替DOM树对象，并且在页面结构改变时进行最小代价的DOM渲染操作。</p>
+<blockquote>
+<p>分享页面到社交平台带缩略图标题与描述</p>
+</blockquote>
+<p>微信，qq需要通过jssdk进行设置，其他的还需研究下</p>
+<blockquote>
+<p>CSS样式书写顺序遵循先布局后内容的规则</p>
+</blockquote>
+<p>常用布局：position, display, float, overflow<br>常用内容：color， font， text-align</p>
+<blockquote>
+<p>JS书写注意</p>
+</blockquote>
+<p>条件判断尽量不要直接unefined进行变量判断</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 不推荐</span></div><div class="line"><span class="keyword">if</span> (name == <span class="literal">undefined</span>) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 推荐</span></div><div class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> person === <span class="string">'undefined'</span>) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>数组遍历用for…of, 对象遍历用for…in</p>
+<blockquote>
+<p>桌面浏览器前端优化策略</p>
+</blockquote>
+<ol>
+<li>减少http资源请求次数</li>
+<li>减少http请求大小</li>
+<li>css或js放到外部文件中，避免内嵌</li>
+<li>避免页面中空的href和src，会阻塞页面中其他资源下载，而且最终加载内容无效</li>
+<li>为html指定Cache-Control或Expires</li>
+<li>合理设置ETag和Last-Modified</li>
+<li>减少页面重定向</li>
+<li>静态资源分域存放来增加下载并行数量</li>
+<li>使用静态资源CDN来存储文件</li>
+<li>使用CDN Commbo下载传说内容</li>
+<li>对于返回内容相同的请求，使用可缓存的Ajax</li>
+<li>使用Get来完成Ajax请求，POST发送会先发文件头在发送正文，GET时只发送头部</li>
+<li>减少Cookie大小并进行隔离</li>
+<li>缩小favicon.ico并缓存</li>
+<li>使用异步js资源</li>
+<li>消除阻碍渲染的css或js</li>
+<li>常用足够小的图片可采用base64内嵌入网页，比如logo</li>
+<li>不要在html中直接缩放图片，会引起内容重排</li>
+<li>避免使用table，iframe等慢元素，table的dom树全部生成完成后并一次绘制到页面上的，长表格渲染很耗性能</li>
+</ol>
+<blockquote>
+<p>移动端前端优化策略</p>
+</blockquote>
+<ol>
+<li>首屏数据请求提前，避免js文件加载后请求数据</li>
+<li>首屏按需加载，非首屏内容滚屏加载，保证首屏内容最小化</li>
+<li>模块话化资源并行下载</li>
+<li>inline首屏必须的css和js</li>
+<li>meta dns perfetch设置DNS预解析</li>
+<li>合理利用MTU策略，一般为1500，所以尽量html内容在1KB以内</li>
+<li>使用高压缩比图片，比如webp</li>
+<li>图片懒加载</li>
+<li>iconfont代替图片图标</li>
+<li>使用touchstart代替click，否者在移动端有300ms延时</li>
+<li>避免touchmove，scroll连续事件，设定间隔16ms为宜</li>
+<li>使用css3动画，开启硬件加速</li>
+<li>不滥用float</li>
+</ol>
+<blockquote>
+<p>前端错误日志上报</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onerror = <span class="function"><span class="keyword">function</span>(<span class="params">msg, url, line</span>) </span>&#123;</div><div class="line">    <span class="comment">// 捕获错误并处理</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -377,9 +589,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端/" rel="tag"># 前端</a>
+            <a href="/tags/阅读/" rel="tag"># 阅读</a>
           
-            <a href="/tags/js/" rel="tag"># js</a>
+            <a href="/tags/前端/" rel="tag"># 前端</a>
           
         </div>
       
@@ -388,8 +600,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/17/web网页中主题切换的实现思路/" rel="next" title="web网页中主题切换的实现思路">
-                <i class="fa fa-chevron-left"></i> web网页中主题切换的实现思路
+              <a href="/2017/11/08/音标入门/" rel="next" title="英语音标入门">
+                <i class="fa fa-chevron-left"></i> 英语音标入门
               </a>
             
           </div>
@@ -397,10 +609,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/29/快速跑起nutzbook项目/" rel="prev" title="快速跑起nutzbook-project项目">
-                快速跑起nutzbook-project项目 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -477,8 +685,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -547,6 +764,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#思维导图"><span class="nav-number">1.</span> <span class="nav-text">思维导图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#笔记"><span class="nav-number">2.</span> <span class="nav-text">笔记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
@@ -673,9 +906,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'pangwu86';
-      var disqus_identifier = '2017/01/21/web页面返回顶部/';
+      var disqus_identifier = '2017/11/24/五读笔记002-现代前端技术解析/';
 
-      var disqus_title = "web页面返回顶部";
+      var disqus_title = "五读笔记002:现代前端技术解析";
 
 
       function run_disqus_script(disqus_script) {
