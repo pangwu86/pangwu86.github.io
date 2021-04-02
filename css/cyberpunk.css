@@ -11666,6 +11666,22 @@ figure.highlight .section {
   width: 16px;
   height: 16px;
 }
+.beian-link {
+  display: inline-block;
+  margin: 2px 0;
+  margin-right: 10px;
+}
+.beian-link .beian-icon {
+  display: inline-block;
+  margin-right: 4px;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+.beian-link a {
+  display: inline-block;
+  font-size: 0.85rem !important;
+}
 body {
   counter-reset: card;
 }
