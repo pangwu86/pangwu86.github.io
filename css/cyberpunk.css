@@ -10810,7 +10810,7 @@ article.article .article-tags {
 }
 article.article .article-meta {
   overflow-x: auto;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 article.article .content {
   word-wrap: break-word;
@@ -11660,6 +11660,45 @@ figure.highlight .section {
   .section {
     padding: 1.5rem 1rem;
   }
+}
+.copyright.article-title {
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+.copyright.article-title.type-1 {
+  color: #ea0f4a;
+  background-color: #f9ecec;
+}
+.copyright.article-title.type-2 {
+  color: #ffa940;
+  background-color: #fff7e6;
+}
+.copyright.article-title.type-3 {
+  color: #52c41a;
+  background-color: #f6ffed;
+}
+.copyright.article-block {
+  padding: 0.4em 0.8em;
+  margin-bottom: 1em;
+  border-radius: 0.3rem;
+  border-left: 5px solid #ca0c16;
+}
+.copyright.article-block P {
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+}
+.copyright.article-block.type-1 {
+  border-left: 5px solid #ea0f4a;
+  background-color: #f9ecec;
+}
+.copyright.article-block.type-2 {
+  border-left: 5px solid #ffa940;
+  background-color: #fff7e6;
+}
+.copyright.article-block.type-3 {
+  border-left: 5px solid #52c41a;
+  background-color: #f6ffed;
 }
 .social-share.share-component {
   text-align: center;
