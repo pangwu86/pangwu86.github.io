@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>IoT 基础知识入门 - 六边形之魂</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="hex souls"><meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/blog/favicon.ico"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="hex souls"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="最近开始接触硬件了，需要了解下 IoT 相关的知识，这里记录一下。"><meta property="og:type" content="blog"><meta property="og:title" content="IoT 基础知识入门"><meta property="og:url" content="https://pangwu86.com/posts/3465478745/"><meta property="og:site_name" content="六边形之魂"><meta property="og:description" content="最近开始接触硬件了，需要了解下 IoT 相关的知识，这里记录一下。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/post/2021-11-05_cover2.png"><meta property="article:published_time" content="2021-11-05T09:22:56.000Z"><meta property="article:modified_time" content="2022-04-16T13:43:35.229Z"><meta property="article:author" content="胖五"><meta property="article:tag" content="IoT"><meta property="article:tag" content="物联网"><meta property="article:tag" content="芯片"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/post/2021-11-05_cover2.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://pangwu86.com/posts/3465478745/"},"headline":"IoT 基础知识入门","image":["https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/post/2021-11-05_cover2.png"],"datePublished":"2021-11-05T09:22:56.000Z","dateModified":"2022-04-16T13:43:35.229Z","author":{"@type":"Person","name":"胖五"},"publisher":{"@type":"Organization","name":"六边形之魂","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/blog/logo_text.png"}},"description":"最近开始接触硬件了，需要了解下 IoT 相关的知识，这里记录一下。"}</script><link rel="canonical" href="https://pangwu86.com/posts/3465478745/"><link rel="icon" href="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/blog/favicon.ico"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.15.2/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+          Array
+              .from(document.querySelectorAll('.tab-content'))
+              .forEach($tab => {
+                  $tab.classList.add('is-hidden');
+              });
+          Array
+              .from(document.querySelectorAll('.tabs li'))
+              .forEach($tab => {
+                  $tab.classList.remove('is-active');
+              });
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/blog/logo_text.png" alt="六边形之魂" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="My GitHub" href="https://github.com/pangwu86"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/post/2021-11-05_cover2.png" alt="IoT 基础知识入门"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item copyright article-title type-1">原创</span><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="${date_xml(page.date)}" title="${date_xml(page.date)}">2021-11-05</time></span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span> / </span><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/%E7%89%A9%E8%81%94%E7%BD%91/">物联网</a></span><span class="level-item">15 分钟读完 (大约2202个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">IoT 基础知识入门</h1><div class="copyright article-block type-1"><p>版权申明：本文为原创文章，转载请注明原文出处</p><p>原文链接：<a href="https://pangwu86.com/posts/3465478745/" target="_blank">https://pangwu86.com/posts/3465478745/</a></p></div><div class="content"><p>最近开始接触硬件了，需要了解下 IoT 相关的知识，这里记录一下。</p>
+<span id="more"></span>
+
+
+<h2 id="什么是-IoT"><a href="#什么是-IoT" class="headerlink" title="什么是 IoT"></a>什么是 IoT</h2><hr>
+<p>物联网 Internet of Things （简称 IoT ），通过各种传感器，实时采集任何需要监控，连接，互动的物体或过程，通过各类可能的网络接入，实现物与物，物与人的连接。</p>
+<p>物联网现实了世界数字化，应用范围十分广泛。物联网可拉近分散的资料，统整物与物的数字信息。</p>
+<h2 id="物联网技术结构"><a href="#物联网技术结构" class="headerlink" title="物联网技术结构"></a>物联网技术结构</h2><hr>
+<p>架构一般分成三层或四层，由底层至上依次为：</p>
+<ol>
+<li>感知设备层，用于收集信息。</li>
+<li>网络连接层，用于传递信息。</li>
+<li>平台工具层，用于整合信息，提供基础服务。</li>
+<li>应用服务层，按照某些业务需求使用数据进行软件应用。</li>
+</ol>
+<h2 id="物联网应用场景"><a href="#物联网应用场景" class="headerlink" title="物联网应用场景"></a>物联网应用场景</h2><hr>
+<p>根据不同的使用群体，大概分成一下几类：</p>
+<ol>
+<li>消费者应用。场景包括共享单车，智能快递柜，智能穿戴设备，无人机，智能家电等。</li>
+<li>工业应用。场景包括机器人，医疗设备，软件定义生产。</li>
+<li>农业应用。收集温度，降水，湿度，风速，病虫害和土壤成分等数据，加以分析和运用。</li>
+<li>商业应用。医疗保健，交通运输等。</li>
+</ol>
+<h2 id="知识点名词解释"><a href="#知识点名词解释" class="headerlink" title="知识点名词解释"></a>知识点名词解释</h2><hr>
+<h3 id="IC"><a href="#IC" class="headerlink" title="IC"></a>IC</h3><p>集成电路（integrated circuit，缩写作 IC），或称微电路（microcircuit）、微芯片（microchip）、芯片（chip），在电子学中是一种将电路（主要包括半导体设备，也包括被动组件等）集中制造在半导体晶圆表面上的小型化方式。</p>
+<p>当今半导体工业大多数应用的是基于硅的集成电路。</p>
+<h3 id="MCU"><a href="#MCU" class="headerlink" title="MCU"></a>MCU</h3><p>单片机，全称单片微型计算机（single-chip microcomputer），也称微控制单元（Microcontroller Unit，即 MCU），是把中央处理器，存储器（程序和数据），定时/计数器，各种输入输出接口都集成在一块集成电路芯片上的微型计算机。</p>
+<p>与通用型的个人电脑相比，单片机更强调自供应（不用外接硬件）和节约成本，它一般体积较小，可以放在仪器内部。</p>
+<p>现在的单片机绝大多数都是基于冯·诺伊曼结构的，这种结构清楚地定义了嵌入式系统所必需的四个基本部分：</p>
+<ol>
+<li>中央处理器核心</li>
+<li>程序存储器，数据存储器</li>
+<li>定时/计时器</li>
+<li>输入/输出端口</li>
+</ol>
+<p>根据总线或资料寄存器的宽度，单片机分为 4 位，8 位，16 位和 32位单片机。</p>
+<ol>
+<li>4 位单片机多用于冰箱，洗衣机，微波炉等家电控制器。</li>
+<li>8 位单片机多用于电表，电动玩具，传真机，键盘，USB 等。</li>
+<li>16 位单片机多用于行动电话，数字相机等。</li>
+<li>8 位、16 位单片机主要用于一般的控制领域，一般不使用操作系统。</li>
+<li>32 位单片机多用于网络操作，多媒体操作等复杂处理的场合，一般需要嵌入式操作系统。</li>
+</ol>
+<h3 id="SoC"><a href="#SoC" class="headerlink" title="SoC"></a>SoC</h3><p>单片系统（System on a Chip，缩写：SoC），直译是“芯片级系统”，通常简称“片上系统”。</p>
+<p>SoC更强调的是一个整体，在集成电路领域，给它的定义为：由多个具有特定功能的集成电路组合在一个芯片上形成的系统或产品，其中包含完整的硬件系统及其承载的嵌入式软件。</p>
+<h3 id="BSP"><a href="#BSP" class="headerlink" title="BSP"></a>BSP</h3><p>板级支持包（board support package，简称 BSP）是构建嵌入式操作系统所需的引导程序(Bootload)、内核(Kernel)、根文件系统(Rootfs)和工具链(Toolchain) 提供完整的软件资源包。</p>
+<p>BSP主要功能为屏蔽硬件，提供操作系统及硬件驱动，具体功能包括：</p>
+<ol>
+<li>单板硬件初始化，主要是CPU的初始化，为整个软件系统提供底层硬件支持</li>
+<li>为操作系统提供设备驱动程序和系统中断服务程序</li>
+<li>定制操作系统的功能，为软件系统提供一个实时多任务的运行环境</li>
+<li>初始化操作系统，为操作系统的正常运行做好准备。</li>
+</ol>
+<h3 id="UART"><a href="#UART" class="headerlink" title="UART"></a>UART</h3><p>通用异步收发传输器（Universal Asynchronous Receiver/Transmitter)，通常称作UART，是一种通用串行数据总线，用于异步通信。该总线双向通信，可以实现全双工传输和接收。在嵌入式设计中，UART用于主机与辅助设备通信，如汽车音响与外接AP之间的通信。</p>
+<p>UART作为异步串口通信协议的一种，工作原理是将传输数据的每个字符一位接一位地传输。</p>
+<h3 id="SPI"><a href="#SPI" class="headerlink" title="SPI"></a>SPI</h3><p>SPI是串行外设接口（Serial Peripheral Interface）的缩写，是一种高速的，全双工，同步的通信总线，并且在芯片的管脚上只占用四根线，节约了芯片的管脚，同时为PCB的布局上节省空间，提供方便，正是出于这种简单易用的特性，越来越多的芯片集成了这种通信协议。</p>
+<h3 id="I2C"><a href="#I2C" class="headerlink" title="I2C"></a>I2C</h3><p>I2C一般指I2C总线。I2C总线是由 Philips 公司开发的一种简单、双向二线制同步串行总线。它只需要两根线即可在连接于总线上的器件之间传送信息。</p>
+<h3 id="ADC"><a href="#ADC" class="headerlink" title="ADC"></a>ADC</h3><p>模拟数字转换器（Analog to Digital Converter）即 A/D 转换器，简称 ADC。A/D 转换的作用是将时间连续、幅值也连续的模拟信号转换为时间离散、幅值也离散的数字信号。</p>
+<h3 id="GPIO"><a href="#GPIO" class="headerlink" title="GPIO"></a>GPIO</h3><p>GPIO（General-purpose input/output），通用型之输入输出的简称，其接脚可以供使用者由程控自由使用，PIN 脚依现实考量可作为通用输入（GPI）或通用输出（GPO）或通用输入与输出（GPIO）。</p>
+<p>既然一个引脚可以用于输入、输出或其他特殊功能，那么一定有寄存器用来选择这些功能。</p>
+<p>简单说，GPIO 就是芯片上的一根干啥都行的引脚。</p>
+<h3 id="SDIO"><a href="#SDIO" class="headerlink" title="SDIO"></a>SDIO</h3><p>SDIO（Secure Digital Input and Output）中文名称：安全数字输入输出，定义了一种外设接口。</p>
+<p>一般应用是通过 SDIO 硬件接口读写 TF 卡。</p>
+<h3 id="PWM"><a href="#PWM" class="headerlink" title="PWM"></a>PWM</h3><p>脉冲宽度调制（Pulse width modulation，PWM），控制方式就是对逆变电路开关器件的通断进行控制，使输出端得到一系列幅值相等但宽度不一致的脉冲，用这些脉冲来代替正弦波或所需要的波形</p>
+<h3 id="G-sensor"><a href="#G-sensor" class="headerlink" title="G-sensor"></a>G-sensor</h3><p>G-sensor，也叫做重力传感器/加速度传感器/运动传感器，检测设备是否在运动的。</p>
+<h3 id="芯片封装"><a href="#芯片封装" class="headerlink" title="芯片封装"></a>芯片封装</h3><p>封装形式是指安装半导体集成电路芯片用的外壳。它不仅起着安装、固定、密封、保护芯片及增强电热性能等方面的作用，而且还通过芯片上的接点用导线连接到封装外壳的引脚上，这些引脚又通过印刷电路板上的导线与其他器件相连接，从而实现内部芯片与外部电路的连接</p>
+<p>封装发展进程:</p>
+<ol>
+<li>结构方面：TO－&gt;DIP－&gt;LCC－&gt;QFP－&gt;BGA －&gt;CSP－&gt;WLP；</li>
+<li>材料方面：金属、陶瓷－&gt;陶瓷、塑料－&gt;塑料；</li>
+<li>引脚形状：长引线直插－&gt;短引线或无引线贴装－&gt;球状凸点；</li>
+<li>装配方式：通孔插装－&gt;表面组装－&gt;直接安装。</li>
+</ol>
+<p>常见的封装类型有：</p>
+<ul>
+<li>DIP封装（Dual In-line Package），双列直插封装，具有两排引脚可插到主板上插槽或焊接到主板上。</li>
+<li>BGA封装（Ball Grid Array Package）球栅阵列封装，I/O 引脚多。</li>
+<li>QFN封装（Quad Flat No-leads Package）, 无引线四方扁平封装，完全没有任何外延引脚。</li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>IoT 基础知识入门</p><p><a href="https://pangwu86.com/posts/3465478745/">https://pangwu86.com/posts/3465478745/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>胖五</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-11-05</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-04-16</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted" rel="tag" href="/tags/IoT/">IoT, </a><a class="link-muted" rel="tag" href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/">物联网, </a><a class="link-muted" rel="tag" href="/tags/%E8%8A%AF%E7%89%87/">芯片 </a></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/blog/payme_alipay.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/blog/payme_weixin.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/posts/3854185796/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">jsDeliver强制刷新缓存</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/posts/2093845957/"><span class="level-item">如何发布一个NPM包</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: "dc4f2ed29814f4bd842f7e6d4155c8b1",
+            repo: "pangwu86.github.io",
+            owner: "pangwu86",
+            clientID: "96c5b60731b57b30acd8",
+            clientSecret: "2fbf6fa329c69464b37fe6e8af2d2b37cbfbfa40",
+            admin: ["pangwu86"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 20,
+            pagerDirection: "last",
+            proxy: "https://shielded-brushlands-08810.herokuapp.com/https://github.com/login/oauth/access_token",
+            
+            enableHotKey: true,
+            language: "zh-CN",
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#什么是-IoT"><span class="level-left"><span class="level-item">1</span><span class="level-item">什么是 IoT</span></span></a></li><li><a class="level is-mobile" href="#物联网技术结构"><span class="level-left"><span class="level-item">2</span><span class="level-item">物联网技术结构</span></span></a></li><li><a class="level is-mobile" href="#物联网应用场景"><span class="level-left"><span class="level-item">3</span><span class="level-item">物联网应用场景</span></span></a></li><li><a class="level is-mobile" href="#知识点名词解释"><span class="level-left"><span class="level-item">4</span><span class="level-item">知识点名词解释</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#IC"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">IC</span></span></a></li><li><a class="level is-mobile" href="#MCU"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">MCU</span></span></a></li><li><a class="level is-mobile" href="#SoC"><span class="level-left"><span class="level-item">4.3</span><span class="level-item">SoC</span></span></a></li><li><a class="level is-mobile" href="#BSP"><span class="level-left"><span class="level-item">4.4</span><span class="level-item">BSP</span></span></a></li><li><a class="level is-mobile" href="#UART"><span class="level-left"><span class="level-item">4.5</span><span class="level-item">UART</span></span></a></li><li><a class="level is-mobile" href="#SPI"><span class="level-left"><span class="level-item">4.6</span><span class="level-item">SPI</span></span></a></li><li><a class="level is-mobile" href="#I2C"><span class="level-left"><span class="level-item">4.7</span><span class="level-item">I2C</span></span></a></li><li><a class="level is-mobile" href="#ADC"><span class="level-left"><span class="level-item">4.8</span><span class="level-item">ADC</span></span></a></li><li><a class="level is-mobile" href="#GPIO"><span class="level-left"><span class="level-item">4.9</span><span class="level-item">GPIO</span></span></a></li><li><a class="level is-mobile" href="#SDIO"><span class="level-left"><span class="level-item">4.10</span><span class="level-item">SDIO</span></span></a></li><li><a class="level is-mobile" href="#PWM"><span class="level-left"><span class="level-item">4.11</span><span class="level-item">PWM</span></span></a></li><li><a class="level is-mobile" href="#G-sensor"><span class="level-left"><span class="level-item">4.12</span><span class="level-item">G-sensor</span></span></a></li><li><a class="level is-mobile" href="#芯片封装"><span class="level-left"><span class="level-item">4.13</span><span class="level-item">芯片封装</span></span></a></li></ul></li></ul></div></div><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/blog/avatar2022.jpg" alt="胖五"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">胖五</p><p class="is-size-6 is-block">宅家野生程序员</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Jinan, China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">11</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">10</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">24</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/pangwu86" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/pangwu86"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Weibo" href="https://weibo.com/pangwu86"><i class="fab fa-weibo"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/6505396"><img class="icon-img" src="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/blog/icon_bilibili.png"></a></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/blog/logo_text.png" alt="六边形之魂" height="28"></a><p class="is-size-7"><span>&copy; 2022 六边形之魂</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><div class="beian-link"><img class="beian-icon" src="/img/ghs.png" alt=""><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=37010202002441" target="_blank" rel="noopener">鲁公网安备37010202002441号</a></div><div class="beian-link"><a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">鲁ICP备2021009242号-1</a></div><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
