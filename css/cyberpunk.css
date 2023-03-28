@@ -10821,11 +10821,9 @@ article.article .content h1 {
 }
 article.article .content h2 {
   font-size: 1.5em;
-  margin-top: 3em;
 }
 article.article .content h3 {
   font-size: 1.25em;
-  margin-top: 2em;
 }
 article.article .content h4 {
   font-size: 1.125em;
@@ -11340,6 +11338,9 @@ figure.highlight .section {
   min-width: inherit;
   border-radius: inherit;
 }
+figure.highlight.foldable div.level-left {
+  cursor: pointer;
+}
 .gist table tr:hover {
   background: transparent;
 }
@@ -11572,6 +11573,9 @@ figure.highlight .section {
   line-height: inherit;
 }
 .MathJax,
+.MathJax_Display,
+.MJXc-display,
+.MathJax_SVG_Display,
 .katex-display {
   overflow-x: auto;
   overflow-y: hidden;
