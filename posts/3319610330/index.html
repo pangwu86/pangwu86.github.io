@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>网络爬虫基础知识 - 六边形之魂</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="hex souls"><meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/blog/favicon.ico"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="hex souls"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="工欲善其事必先利其器，多了解一些基础知识，才能更好的知道从哪里下手。"><meta property="og:type" content="blog"><meta property="og:title" content="网络爬虫基础知识"><meta property="og:url" content="https://pangwu86.com/posts/3319610330/"><meta property="og:site_name" content="六边形之魂"><meta property="og:description" content="工欲善其事必先利其器，多了解一些基础知识，才能更好的知道从哪里下手。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/post/2023-07-17_cover.jpg"><meta property="article:published_time" content="2023-07-17T13:39:40.000Z"><meta property="article:modified_time" content="2023-07-19T16:41:39.321Z"><meta property="article:author" content="胖五"><meta property="article:tag" content="HTTP"><meta property="article:tag" content="Python"><meta property="article:tag" content="Web Scraper"><meta property="article:tag" content="爬虫"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/post/2023-07-17_cover.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://pangwu86.com/posts/3319610330/"},"headline":"网络爬虫基础知识","image":["https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/post/2023-07-17_cover.jpg"],"datePublished":"2023-07-17T13:39:40.000Z","dateModified":"2023-07-19T16:41:39.321Z","author":{"@type":"Person","name":"胖五"},"publisher":{"@type":"Organization","name":"六边形之魂","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/blog/logo_text.png"}},"description":"工欲善其事必先利其器，多了解一些基础知识，才能更好的知道从哪里下手。"}</script><link rel="canonical" href="https://pangwu86.com/posts/3319610330/"><link rel="icon" href="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/blog/favicon.ico"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/rainbow.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/blog/logo_text.png" alt="六边形之魂" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="My GitHub" href="https://github.com/pangwu86"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/post/2023-07-17_cover.jpg" alt="网络爬虫基础知识"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item copyright article-title type-1">原创</span><span class="level-item"><time dateTime="2023-07-17T13:39:40.000Z" title="2023/7/17 下午9:39:40">2023-07-17</time>发表</span><span class="level-item"><time dateTime="2023-07-19T16:41:39.321Z" title="2023/7/20 上午12:41:39">2023-07-20</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span> / </span><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/%E7%BD%91%E7%AB%99/">网站</a></span><span class="level-item">11 分钟读完 (大约1702个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">网络爬虫基础知识</h1><div class="copyright article-block type-1"><p>版权申明：本文为原创文章，转载请注明原文出处</p><p>原文链接：<a href="https://pangwu86.com/posts/3319610330/" target="_blank">https://pangwu86.com/posts/3319610330/</a></p></div><div class="content"><p>工欲善其事必先利其器，多了解一些基础知识，才能更好的知道从哪里下手。</p>
+<span id="more"></span>
+<hr>
+<h1 id="HTTP-基本原理"><a href="#HTTP-基本原理" class="headerlink" title="HTTP 基本原理"></a>HTTP 基本原理</h1><h2 id="资源定位"><a href="#资源定位" class="headerlink" title="资源定位"></a>资源定位</h2><p>URI（Uniform Resource Identifier）即 <code>统一资源标志符</code><br>URL（Uniform Resource Locator）即 <code>统一资源定位符</code><br>URN（Uniform Resource Name）即 <code>统一资源名称</code></p>
+<p>URI 可被视为定位符（URL），名称（URN）或两者兼备。</p>
+<p>统一资源名（URN）如同一个人的名称，而统一资源定位符（URL）代表一个人的住址。换言之，URN 定义某事物的身份，而 URL 提供查找该事物的方法。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/post/2023-07-17_URLURIURN.png" alt="URI 包含 URL 与 URN"></p>
+<p>更多信息查看 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-hans/%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E6%A0%87%E5%BF%97%E7%AC%A6">维基百科链接</a></p>
+<h2 id="超文本"><a href="#超文本" class="headerlink" title="超文本"></a>超文本</h2><p>通过浏览器访问的网站就是使用 <code>超文本标记语言</code>（HyperText Markup Language，简称 HTML）编写的，除了展示页面元素还会有一些网络链接。</p>
+<p>更多信息查看 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-tw/HTML">维基百科链接</a></p>
+<h2 id="访问协议"><a href="#访问协议" class="headerlink" title="访问协议"></a>访问协议</h2><p>一般网页地址的开头会看到 <code>http</code> 或 <code>https</code>，这就是访问资源需要的协议类型。常见的协议还包括 <code>ftp</code> <code>sftp</code> <code>smb</code> 等。</p>
+<p>HTTP（HyperText Transfer Protocol）即 <code>超文本传输协议</code><br>HTTPS (HyperText Transfer Protocol Secure， 常称为 HTTP over TLS, HTTP over SSL) 即 <code>超文本传输安全协议</code>，主要就是在 HTTP 下面加入了 SSL 层，所有通过它传输的内容都要通过 SSL 加密。</p>
+<p>HTTPS 的主要作用是在不安全的网络上创建一个安全信道，并可在使用适当的加密包和服务器证书可被验证且可被信任时，对窃听和中间人攻击提供合理的防护。</p>
+<p>越来越多的网站与 APP 都要求使用 HTTPS，例如：</p>
+<ol>
+<li>苹果要求 iOS APP 在 2017 年 1 月 1 日前全部改为 HTTPS 加密传输，否在 APP 将无法在应用商店上架。</li>
+<li>谷歌的 Chrome 浏览器，对未使用 HTTPS 加密的网址链接亮出风险提示，告知用户 “此网页不安全”</li>
+<li>微信小程序要求与后台的通讯必须使用 HTTPS，不满足条件的域名与协议无法进行通信</li>
+</ol>
+<p>更多信息查看 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE">Title</a></p>
+<h2 id="HTTP-请求"><a href="#HTTP-请求" class="headerlink" title="HTTP 请求"></a>HTTP 请求</h2><p>访问一个网站的过程就是在本地浏览器中输入一个地址，浏览器发起了一个请求（<code>Request</code>）到服务器，服务器对其请求内容做出处理后返回一个响应（<code>Response</code>）,浏览器收到响应后显示对应的内容。</p>
+<p>常见请求方法：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>GET</td>
+<td>请求指定的页面信息，并返回实体主体。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>HEAD</td>
+<td>类似于 GET 请求，只不过返回的响应中没有具体的内容，用于获取报头</td>
+</tr>
+<tr>
+<td>3</td>
+<td>POST</td>
+<td>向指定资源提交数据进行处理请求（例如提交表单/上传文件）。通常导致在服务器上的状态变化或副作用。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>PUT</td>
+<td>从客户端向服务器传送的数据取代指定的文档的内容。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>DELETE</td>
+<td>请求服务器删除指定的页面。</td>
+</tr>
+<tr>
+<td>6</td>
+<td>CONNECT</td>
+<td>HTTP/1.1 协议中预留给能够将连接改为管道方式的代理服务器。</td>
+</tr>
+<tr>
+<td>7</td>
+<td>OPTIONS</td>
+<td>允许客户端查看服务器的性能。</td>
+</tr>
+<tr>
+<td>8</td>
+<td>TRACE</td>
+<td>回显服务器收到的请求，主要用于测试或诊断。</td>
+</tr>
+<tr>
+<td>9</td>
+<td>PATCH</td>
+<td>是对 PUT 方法的补充，用来对已知资源进行局部更新 。</td>
+</tr>
+</tbody></table>
+<p>常见响应状态码与分类：</p>
+<ul>
+<li>200 - 请求成功</li>
+<li>301 - 资源（网页等）被永久转移到其它URL</li>
+<li>404 - 请求的资源（网页等）不存在</li>
+<li>500 - 内部服务器错误</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">分类</th>
+<th align="left">分类描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1**</td>
+<td align="left">信息，服务器收到请求，需要请求者继续执行操作</td>
+</tr>
+<tr>
+<td align="left">2**</td>
+<td align="left">成功，操作被成功接收并处理</td>
+</tr>
+<tr>
+<td align="left">3**</td>
+<td align="left">重定向，需要进一步的操作以完成请求</td>
+</tr>
+<tr>
+<td align="left">4**</td>
+<td align="left">客户端错误，请求包含语法错误或无法完成请求</td>
+</tr>
+<tr>
+<td align="left">5**</td>
+<td align="left">服务器错误，服务器在处理请求的过程中发生了错误</td>
+</tr>
+</tbody></table>
+<h1 id="Web-网页基础"><a href="#Web-网页基础" class="headerlink" title="Web 网页基础"></a>Web 网页基础</h1><p>网页由三部分组成，HTML，CSS，JavaScript。</p>
+<p>HTML 相当于房屋主体框架<br>CSS 相当于房屋的装修<br>JavaScript 相当于房屋各种开关与电器</p>
+<p>一般网页的标准结构：</p>
+<ol>
+<li>html 标签内嵌套 head 和 body 标签</li>
+<li>head 内定义网页的配置与引用</li>
+<li>body 内定义网页的正文内容</li>
+</ol>
+<p>在 HTML 中，所有的标签定义的内容都是节点，它们构成了一个 HTML DOM 树。<br>DOM（Document Object Model）即 <code>文档对象模型</code>，是 web 上构成文档结构和内容的对象的数据表示， 对访问/修改 HTML 的内容提供了接口。</p>
+<h1 id="爬虫基本原理"><a href="#爬虫基本原理" class="headerlink" title="爬虫基本原理"></a>爬虫基本原理</h1><p>爬虫就是获取网页并提取和保存信息的自动化程序。</p>
+<p>爬虫运行的 2 个主要步骤：</p>
+<ol>
+<li>构造一个请求并发送给服务器</li>
+<li>接受到响应并将其解析出来</li>
+</ol>
+<h1 id="Session-Cookies-与-Token"><a href="#Session-Cookies-与-Token" class="headerlink" title="Session Cookies 与 Token"></a>Session Cookies 与 Token</h1><p>HTTP 是无状态的，后续如果需要处理前面的信息，需要额外传递一些内容。</p>
+<p>在服务端，Session 保存用户信息。在客户端，Cookies 保存用户信息。二者共同协作，用来跟踪会话，确保用户访问的有效性。</p>
+<p>大多数的应用都是用 Cookie 实现 Session 跟踪的。第一次创建 Session 时，服务端会通过在 HTTP 协议中返回给客户端，在 Cookie 中记录 SessionID，后续请求时传递 SessionID 给服务，以便后续每次请求时都可分辨你是谁。</p>
+<p>Session 单机模式下比较适用，如果遇到大并发场景需要服务器集群，就涉及到多个服务器间的 Session 共享问题，或者在多个服务器后面放一个 Redis 来存放 Session。</p>
+<p>Token 模式解决了集群共享 Session 的问题，它由一套固定的算法将用户信息与校验信息生成一串特殊的字符，只要签名算法不泄露变可以通过每次请求携带 Token 来判断用户的有效性。</p>
+<p>Token 一旦生成无法让其失效，必须等到其过期才行。</p>
+<p>Token 一般放在 header 字段中传递。</p>
+<p>Token 比较容易做单点登录，跨域跨服务器都很容易校验。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>网络爬虫基础知识</p><p><a href="https://pangwu86.com/posts/3319610330/">https://pangwu86.com/posts/3319610330/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>胖五</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2023-07-17</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2023-07-20</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/HTTP/">HTTP</a><a class="link-muted mr-2" rel="tag" href="/tags/Python/">Python</a><a class="link-muted mr-2" rel="tag" href="/tags/Web-Scraper/">Web Scraper</a><a class="link-muted mr-2" rel="tag" href="/tags/%E7%88%AC%E8%99%AB/">爬虫</a></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/blog/payme_alipay.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/blog/payme_weixin.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/posts/2634616204/"><span class="level-item">阿里云更新免费SSL证书</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: "cd942ff6ff4cae83eb25c64e067f21f9",
+            repo: "pangwu86.github.io",
+            owner: "pangwu86",
+            clientID: "96c5b60731b57b30acd8",
+            clientSecret: "2fbf6fa329c69464b37fe6e8af2d2b37cbfbfa40",
+            admin: ["pangwu86"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 20,
+            pagerDirection: "last",
+            proxy: "https://shielded-brushlands-08810.herokuapp.com/https://github.com/login/oauth/access_token",
+            
+            enableHotKey: true,
+            language: "zh-CN",
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#HTTP-基本原理"><span class="level-left"><span class="level-item">1</span><span class="level-item">HTTP 基本原理</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#资源定位"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">资源定位</span></span></a></li><li><a class="level is-mobile" href="#超文本"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">超文本</span></span></a></li><li><a class="level is-mobile" href="#访问协议"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">访问协议</span></span></a></li><li><a class="level is-mobile" href="#HTTP-请求"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">HTTP 请求</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Web-网页基础"><span class="level-left"><span class="level-item">2</span><span class="level-item">Web 网页基础</span></span></a></li><li><a class="level is-mobile" href="#爬虫基本原理"><span class="level-left"><span class="level-item">3</span><span class="level-item">爬虫基本原理</span></span></a></li><li><a class="level is-mobile" href="#Session-Cookies-与-Token"><span class="level-left"><span class="level-item">4</span><span class="level-item">Session Cookies 与 Token</span></span></a></li></ul></div></div><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/blog/avatar2022.jpg" alt="胖五"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">胖五</p><p class="is-size-6 is-block">宅家野生程序员</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Jinan, China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">18</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">38</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/pangwu86" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/pangwu86"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Weibo" href="https://weibo.com/pangwu86"><i class="fab fa-weibo"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/6505396"><img class="icon-img" src="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/blog/icon_bilibili.png"></a></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="https://cdn.jsdelivr.net/gh/pangwu86/pwblog-cdn/blog/logo_text.png" alt="六边形之魂" height="28"></a><p class="is-size-7"><span>&copy; 2023 六边形之魂</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><div class="beian-link"><img class="beian-icon" src="/img/ghs.png" alt=""><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=37010202002441" target="_blank" rel="noopener">鲁公网安备37010202002441号</a></div><div class="beian-link"><a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">鲁ICP备2021009242号-1</a></div><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
